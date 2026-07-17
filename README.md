@@ -50,6 +50,31 @@ That is the shape of everything in this repo: find it in public, turn it into so
 
 Four of the six are the same defect wearing different clothes: **a machine-readable surface that no machine checks.** They built the plumbing; nothing runs through it. That is a good problem to inherit — the expensive half is already done.
 
+## The one that isn't CMMC and isn't FedRAMP
+
+On 13 July 2026 the DoW CIO suspended CMMC Phase II. The same office publishes **[Brilliant at the Basics](https://dowcio.war.gov/BrilliantBasics/)** — a Top 10 of IT practices it tells the Defense Industrial Base to actually do, framed explicitly as stripping away *"administrative complexity and compliance overhead."* No assessment, no contract clause, nobody will ever audit against it. It is the clearest public statement of what the customer thinks good looks like, published by the office that just took the credential away.
+
+So [`brilliant_basics.py`](assessment/data/brilliant_basics.py) asks what the enforced baseline can see of it:
+
+```
+10 DoW CIO IT practices · 8 reachable from NIST 800-171 Rev 2
+                        · 1 framework blind spot · 1 not-a-control
+
+  [08] Secure AI Adoption and Data Protection  <- (BLIND SPOT) -> AAT-01, AAT-02
+```
+
+**NIST SP 800-171 Rev 2 contains no artificial-intelligence requirement.** Not a weak one — none. Rev 2 was published in February 2020; the 110 predate the workforce LLM entirely, and Rev 3 does not add one. A contractor can score a perfect **110** in SPRS, sign the [32 CFR 170.22](https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-G/part-170/subpart-D/section-170.22) affirmation under False Claims Act liability, and be wholly non-conformant with a practice the same CIO office calls a Top 10 basic for the DIB.
+
+The score is not wrong. **The lens has a blind spot, and the credential cannot see through it.**
+
+`AAT-01` (AI and autonomous technologies governance) and `AAT-02` (model and prompt change management) are *already* among the 45 in-scope controls — fired by `ai-products: true` in the config, satisfying NIST AI RMF 1.0 and ISO/IEC 42001:2023. The control set can see this practice. The 800-171 view of that same control set cannot. That is the argument for one control set rendered into many frameworks, made by the customer's own CIO rather than by me.
+
+It also lands exactly on [finding 03](findings/#03--no-internal-ai-policy-while-publishing-ai-risk-guidance-for-other-people) — and Mattermost sells sovereign AI to the department that published the list.
+
+**The map does not let the finding rot.** One of its 15 tests gives 800-171 a route to `AAT-01` and asserts the tool *refuses* to keep claiming the gap. The claim stands only while it is true. → **[`assessment/brilliant-basics-map.md`](assessment/brilliant-basics-map.md)**
+
+Two other practices are reachable but *materially weaker* than the requirement suggests — 800-171 asks for MFA, not phishing-resistant MFA; it asks for backup confidentiality, not immutability or restore drills. Flagged as thin rather than counted as clean, because counting them clean is the fail-open defect this repo exists to catch.
+
 ## The federal instruments
 
 Separate from the findings, because they are built for the obligation rather than drawn from an observation. → **[`assessment/`](assessment/)**
@@ -116,11 +141,13 @@ pip install pyyaml
 python3 deliverables/questionnaire-linter/lint_answers.py          # their live answer bank
 python3 assessment/data/affirmation_gate.py --state assessment/data/examples/worked-example.state.yaml
 python3 assessment/data/upstream_drift.py                          # vs FedRAMP's live ruleset
+python3 assessment/data/brilliant_basics.py                        # vs the DoW CIO's own Top 10
 
 # every checker, attacked
 python3 deliverables/questionnaire-linter/test_lint_answers.py     # 16 tests
 python3 assessment/data/test_affirmation_gate.py                   # 15 tests
 python3 assessment/data/test_upstream_drift.py                     #  9 tests
+python3 assessment/data/test_brilliant_basics.py                   # 15 tests
 ```
 
 Same config, same library, same output. That property is the whole point.
