@@ -2,3 +2,26 @@
 
 __pycache__/
 *.pyc
+
+# Secrets and credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.*
+*_secret*
+.netrc
+
+# Real evidence / state — the instance computes evidence inside the boundary, never here
+*.state.yaml
+!assessment/data/examples/*.state.yaml   # keep the synthetic worked example
+evidence/
+*.evidence.*
+
+# Local caches and tooling
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/

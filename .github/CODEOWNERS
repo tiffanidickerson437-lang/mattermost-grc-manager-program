@@ -1,0 +1,16 @@
+# Code owners for mattermost-grc-day-one (the private, data-bearing instance).
+#
+# Everything is owned by the repo owner until a second reviewer exists. While
+# there is only one collaborator, keep `require_code_owner_review: false` in the
+# branch ruleset — a solo code owner cannot approve their own PR. This file still
+# earns its place: it documents ownership explicitly and is ready to enforce the
+# moment a second reviewer joins (flip require_code_owner_review to true then).
+
+*                                       @tiffanidickerson437-lang
+
+# High-sensitivity surfaces — kept explicit even solo, so ownership is documented,
+# not left to prose.
+/assessment/                            @tiffanidickerson437-lang
+/companies/                             @tiffanidickerson437-lang
+/.github/                               @tiffanidickerson437-lang
+/deliverables/questionnaire-linter/     @tiffanidickerson437-lang

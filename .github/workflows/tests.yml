@@ -1,0 +1,41 @@
+name: tests
+
+# Umbrella test workflow: runs every tracked test file on every push and pull
+# request, with no path filter, in a single job named `tests`. The two existing
+# workflows (affirmation-gate, fedramp-rules-drift) stay as path-filtered /
+# scheduled drift monitors — this one is the check you gate `main` on once it has
+# run at least once and you have confirmed the context string is literally `tests`.
+#
+# engine-patch/test_framework_fidelity.py is intentionally NOT listed: engine-patch/
+# is not tracked in this repo, so it is not present in a CI checkout and a step that
+# ran it would fail on "file not found". Add one line here once engine-patch is
+# committed.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4.3.1
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5.6.0
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install --disable-pip-version-check pyyaml
+      - name: Affirmation gate blocks and clears correctly
+        run: python3 assessment/data/test_affirmation_gate.py
+      - name: Upstream drift checker detects drift
+        run: python3 assessment/data/test_upstream_drift.py
+      - name: Brilliant Basics classification holds
+        run: python3 assessment/data/test_brilliant_basics.py
+      - name: Questionnaire linter finds the planted defect
+        run: python3 deliverables/questionnaire-linter/test_lint_answers.py

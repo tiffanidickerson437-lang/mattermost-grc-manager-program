@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Python dependencies (requirements.txt).
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+  # Pinned GitHub Actions — keeps the SHA pins in the workflows current and their
+  # version comments accurate.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
