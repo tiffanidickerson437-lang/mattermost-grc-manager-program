@@ -32,7 +32,7 @@ Change the config and the program re-renders. Adding a framework is a crosswalk 
 
 ## Why this repo exists
 
-The GRC Manager posting was published prior to the DoW CIO's suspension of CMMC's third-party assessment phase, and its first success metric, a CMMC Level 2 gap assessment and readiness roadmap in 90 days, was written for the regime that suspension changed. In the same ten-week window, FedRAMP renamed its designation scheme, shipped a consolidated machine-readable ruleset, and opened its 20x submission pipeline with the words "continuous evidence of what is happening is stronger than a policy saying it should happen." The regulators now write the thesis this engine was built on.
+The GRC Manager posting was published prior to the DoW CIO's suspension of CMMC's third-party assessment phase (https://dowcio.war.gov/CMMC/), and its first success metric, a CMMC Level 2 gap assessment and readiness roadmap in 90 days, was written for the regime that suspension changed. In the same ten-week window, FedRAMP renamed its designation scheme, shipped a consolidated machine-readable ruleset, and opened its 20x submission pipeline with the words "continuous evidence of what is happening is stronger than a policy saying it should happen." The regulators now write the thesis this engine was built on.
 
 So the plan in this repo is regime-aware by construction: it holds the same evidence standard through every branch of the September Task Force outcome, and it treats the suspension as what it is, a transfer of the assessment burden in-house that raises the bar for computed, re-derivable evidence.
 
