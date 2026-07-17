@@ -1,0 +1,95 @@
+# Polarity rules for questionnaire answer banks.
+#
+# A security questionnaire is mostly positive-polarity: "are passwords encrypted?"
+# — Yes is the good answer, and a reviewer's eye slides down a column of Yes.
+# Buried in that column are negative-polarity questions, where Yes is a
+# disclosure: "do internet-facing privileged accounts contain SSNs?" Nobody reads
+# a Yes column closely. That is the entire failure mode.
+#
+# These rules are committed rather than hidden in a script, for the same reason
+# the engine commits its AI prompts: the instruction the checker follows has to
+# be reviewable by the person who owns the answer. A rule you cannot read is a
+# rule you cannot disagree with.
+#
+# The linter never decides. It routes a human to the questions where Yes would
+# be an admission, and says why. Polarity is a judgment about what a question
+# means, and judgment stays with a person.
+
+metadata:
+  version: "2026.07.17"
+  basis: >
+    Curated by hand against the question phrasing in publicly published
+    questionnaire answer banks. Patterns are conservative on purpose: a false
+    "review this" costs a reader ten seconds, a missed disclosure costs a deal
+    or a customer's trust. But a linter that flags everything gets muted, so
+    unknown polarity is reported separately and never as a finding.
+
+# Yes is an ADMISSION. These are the ones that matter.
+negative_polarity:
+  - id: NEG-PII-EXPOSURE
+    why: "Answering Yes asserts that sensitive data sits somewhere it should not."
+    all_of:
+      - "\\bdo\\b|\\bdoes\\b|\\bare\\b|\\bis\\b"
+      - "contain|store|hold|include|process"
+    any_of:
+      - "personally identifiable information|\\bPII\\b"
+      - "social security number"
+      - "credit card number"
+      - "patient health record|protected health information|\\bPHI\\b"
+      - "confidential record"
+
+  - id: NEG-INTERNET-EXPOSURE
+    why: "Answering Yes asserts sensitive material is reachable from the internet."
+    all_of:
+      - "communicate directly with the internet|internet-facing|publicly accessible|exposed to the internet"
+      - "contain|store|hold|include"
+
+  - id: NEG-KNOWN-WEAKNESS
+    why: "Answering Yes asserts a known unremediated weakness."
+    any_of:
+      - "known (vulnerabilit|weakness|defect|issue)"
+      - "unpatched|unsupported|end.of.life|end.of.support"
+      - "shared (account|credential|password)"
+      - "default (password|credential)"
+      - "hard.?coded (password|credential|key)"
+
+  - id: NEG-BREACH-HISTORY
+    why: "Answering Yes asserts an incident occurred. True or not, it must be deliberate."
+    any_of:
+      - "(have|has) (you|there) (ever )?(been|had) (a|any) (breach|compromise|incident)"
+      - "unauthorized (access|disclosure) (occurred|happened)"
+
+  - id: NEG-THIRD-PARTY-EXPOSURE
+    why: "Answering Yes asserts data leaves the boundary in a way a reviewer must confirm."
+    all_of:
+      - "third.part(y|ies)|subcontractor|offshore|outside the"
+      - "access|transmit|store|process"
+    any_of:
+      - "\\bPII\\b|\\bPHI\\b|customer data|personal data|confidential"
+
+# Yes is the good answer. Listed so the linter can tell "checked and fine" from
+# "could not classify" — a distinction a fail-open checker loses.
+positive_polarity:
+  - id: POS-CONTROL-PRESENT
+    any_of:
+      - "\\bare\\b.*\\b(encrypted|required|reviewed|logged|classified|monitored|tested|documented|approved)\\b"
+      - "\\bdo you\\b.*\\b(maintain|perform|conduct|require|enforce|review|publish|provide)\\b"
+      - "\\bis\\b.*\\b(there|content|access)\\b.*\\b(defined|restricted|published|reviewed|limited)\\b"
+      - "at least (once|annually|quarterly|monthly)"
+
+# Pairs whose answers cannot both be true. Checked independently of polarity,
+# because a contradiction is a fact about the document, not a judgment about it.
+contradictions:
+  - id: XOR-PII-EXPOSED-VS-PII-PROTECTED
+    why: >
+      One answer says sensitive data sits on internet-facing privileged accounts;
+      the other says all such data is protected by industry-standard encryption.
+      Both may be literally reconcilable, but a customer's security reviewer will
+      not reconcile them — they will ask, and the deal slows while someone finds
+      out which is true.
+    left:
+      match: "contain any personally identifiable information"
+      expect_answer: "no"
+    right:
+      match: "protected using an industry standard encryption algorithm"
+      expect_answer: "yes"

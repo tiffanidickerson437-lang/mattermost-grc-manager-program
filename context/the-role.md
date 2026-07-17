@@ -10,7 +10,7 @@ The framing sentence, verbatim:
 
 Responsibilities, condensed from the posting: own and modernize compliance across federal and commercial markets; lead readiness, certification, and surveillance cycles; run risk management end to end including treatment and acceptance; own third-party and vendor risk including supply chain; replace manual evidence collection with continuous controls monitoring; build AI-native workflows for recurring compliance work; maintain the control library, SSPs, POA&Ms, and policies; coordinate external audits from scoping through remediation; own customer security questionnaires and trust center content; grow and lead the GRC team.
 
-Success metrics, verbatim and in their order, in the [plan overview](../30-60-90/README.md).
+Success metrics, verbatim and in their order, in the [plan overview](../generated/30-60-90/README.md).
 
 ## Requirements, and how I match
 
@@ -28,7 +28,7 @@ Success metrics, verbatim and in their order, in the [plan overview](../30-60-90
 ## Three notable tells in the posting
 
 1. **"AI-native" is the req's word, and it is management's word for the compliance program specifically.** Their product language says "sovereign AI." Someone wrote this req thinking about how the compliance function itself should run. That is unusual and it is the strongest fit signal in the document.
-2. **FedRAMP appears only in the screening question, never in the responsibilities.** The federal readiness scope is written as CMMC and 800-171. Whether FedRAMP ambitions live elsewhere (or nowhere) is [open question 5](../hiring-manager-questions.md).
+2. **FedRAMP appears only in the screening question, never in the responsibilities.** The federal readiness scope is written as CMMC and 800-171. Whether FedRAMP ambitions live elsewhere (or nowhere) is [open question 5](../findings/open-questions.md).
 3. **The team language is forward-looking.** "Grow and lead the GRC team as the program scales" describes a team to be built. The plan treats that as an opportunity to shape the function's operating model from its first hire.
 
 ## The timing fact that shapes everything

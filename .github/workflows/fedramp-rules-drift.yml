@@ -1,0 +1,110 @@
+name: FedRAMP ruleset drift
+
+# Watches FedRAMP's live machine-readable ruleset and fails when it moves and
+# this repo's KSI mapping has not. The mapping is authored by a human, so it is
+# accurate on the day it is written and silently stale on every day after. This
+# workflow is the difference between "the mapping is current" as a claim and as
+# a computation.
+#
+# No step in this file is allowed to swallow a failure. There is no `|| true`
+# and no continue-on-error, on purpose: a green check that cannot go red is
+# decoration.
+
+on:
+  schedule:
+    # Mondays 13:00 UTC. FedRAMP publishes on its own schedule, not ours, so
+    # this is a watch loop rather than a reaction to anything we do.
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+  push:
+    paths:
+      - "assessment/data/fedramp-20x-ksi-mapping.yaml"
+      - "assessment/data/upstream_drift.py"
+      - "assessment/data/test_upstream_drift.py"
+      - ".github/workflows/fedramp-rules-drift.yml"
+  pull_request:
+    paths:
+      - "assessment/data/**"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  reconcile:
+    name: Reconcile KSI mapping against FedRAMP/rules
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --disable-pip-version-check pyyaml
+
+      # The checker runs first against fixtures with planted defects. If the
+      # checker cannot detect drift it does not get to tell us there is none:
+      # a broken checker must never be the reason a build is green. This step
+      # exists because the first adversarial pass gutted the comparison to
+      # `return []` and the live run still reported a clean reconcile.
+      - name: Prove the checker detects drift
+        run: python3 assessment/data/test_upstream_drift.py
+
+      - name: Reconcile against live upstream
+        id: reconcile
+        run: python3 assessment/data/upstream_drift.py
+
+      # Only reached when reconcile exits non-zero. Exit 1 is drift (FedRAMP
+      # moved); exit 2 is could-not-check (network, moved schema, bad parse) --
+      # both are failures, neither is a pass.
+      - name: Open a drift issue
+        if: failure() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          title="FedRAMP ruleset drift detected $(date -u +%Y-%m-%d)"
+          if gh issue list --state open --search "$title" --json title \
+              --jq '.[].title' | grep -Fqx "$title"; then
+            echo "Issue already open for today; not duplicating."
+            exit 0
+          fi
+          gh issue create \
+            --title "$title" \
+            --label "compliance,federal" \
+            --body "$(cat <<'EOF'
+          The scheduled reconcile against
+          [`FedRAMP/rules`](https://github.com/FedRAMP/rules) did not come back clean.
+
+          Either FedRAMP has revised the ruleset and this repo's KSI mapping has not been
+          re-derived, or the check itself could not run. Both are failures; neither is a pass.
+
+          **What a human has to do — the workflow deliberately cannot do this itself:**
+
+          1. Read the run log linked below for the specific findings.
+          2. Diff the upstream ruleset against `assessment/data/fedramp-20x-ksi-mapping.yaml`.
+          3. Re-derive the affected mappings against the current 800-53 anchors.
+          4. Bump `RECONCILED_AGAINST` in `assessment/data/upstream_drift.py`.
+          5. Open a PR. The merge is the authorization: the mapping is not current
+             because a job said so, it is current because a person re-derived it and
+             someone approved the derivation.
+
+          Re-deriving is judgment, so it stays with a person. What the automation removes
+          is the possibility of not noticing.
+
+          EOF
+          )
+
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: Publish the receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: upstream-conformance-receipt
+          path: assessment/upstream-conformance-receipt.md
+          if-no-files-found: error

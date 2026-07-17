@@ -39,7 +39,7 @@ The plan is deliberately built so the work of the first 90 days stays identical 
 ## Standing assumptions
 
 - Start date modeled as September 2026. If it moves, the relative day numbers hold; the Task Force collision point moves with the calendar.
-- The plan assumes answers to the first four [hiring manager questions](../hiring-manager-questions.md) arrive before or during week one. Where an answer would change the plan, the phase files say so at that step.
+- The plan assumes answers to the first four [hiring manager questions](../../findings/open-questions.md) arrive before or during week one. Where an answer would change the plan, the phase files say so at that step.
 - Method throughout is the one my [compliance engine](https://github.com/tiffanidickerson437-lang/compliance-program) demonstrates: controls defined once, evidence computed from systems of record rather than screenshotted, AI drafting narratives under human approval, every status claim checkable. The engine's generic phases (discover, design, operate) are the skeleton; this plan is that skeleton dressed in Mattermost's actual calendar and obligations.
 
 ## What I will not do in the first 90 days

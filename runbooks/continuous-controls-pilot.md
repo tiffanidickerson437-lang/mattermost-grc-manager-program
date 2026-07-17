@@ -29,6 +29,6 @@ One page: controls covered, evidence items automated (the before/after count), d
 
 ## What this is deliberately not
 
-- Not a Drata replacement, and not a shadow GRC system. The architecture question is decided in the [60-day memo](../30-60-90/days-31-60.md) with its owner in the room, on the pilot's real data.
+- Not a Drata replacement, and not a shadow GRC system. The architecture question is decided in the [60-day memo](../generated/30-60-90/days-31-60.md) with its owner in the room, on the pilot's real data.
 - Not an AI project. The pipeline is deterministic. AI enters only where it belongs: drafting the remediation narrative on a drift ticket for a human to review, never producing the evidence.
 - Not a big-bang. One control family proven end to end teaches more and earns more trust than five families sketched in parallel.

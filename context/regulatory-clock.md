@@ -21,7 +21,7 @@ Every date that governs the plan. All verified against primary sources on 16 Jul
 |---|---|---|
 | 2026-08-14, 12:00 ET | CMMC RFI public comments close | Pre-start: worth reading the comment record for where industry is pushing |
 | 2026-08-15 | Mattermost v10.11 ESR end of life | Customer upgrade pressure; context for support-posture questions |
-| ~2026-09-11 | CMMC Reform Task Force reports to the DoW CIO (60 days from announcement) | Lands inside week two of a September start. The regulatory response memo in [days 1 to 30](../30-60-90/days-1-30.md) absorbs it the day it drops |
+| ~2026-09-11 | CMMC Reform Task Force reports to the DoW CIO (60 days from announcement) | Lands inside week two of a September start. The regulatory response memo in [days 1 to 30](../generated/30-60-90/days-1-30.md) absorbs it the day it drops |
 | FY26 Q4 (Jul–Sep 2026) | FedRAMP 20x submission pipeline opens: Classes A, B, C supported | The window is open now. Relevant to open question 5 |
 | FY27 Q1–Q2 (est.) | 20x Phase 4: Class D (High) pilot | Class D does not exist in 20x until this window. The package Mattermost inherits from its partner is Rev5 Class D |
 | 2027-06-11 | FedRAMP stops accepting new Rev5 certifications | Any "wait and see" federal strategy has a hard wall here |

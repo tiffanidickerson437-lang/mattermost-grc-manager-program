@@ -6,7 +6,7 @@ Every framework and regime this role touches, what Mattermost's relationship to 
 
 | Framework | Mattermost's position | Where it lives in the plan |
 |---|---|---|
-| **SOC 2 Type II** | Held. 2025 report plus a 2026 bridge letter and a SOC 3 on the trust center. Since March 2026 it is also the accepted entry framework for a FedRAMP Class A certification, which makes it strategically heavier than a routine commercial audit | [Audit-cycles runbook](../runbooks/soc2-iso-audit-cycles.md); calendar and evidence inventory in [days 1 to 30](../30-60-90/days-1-30.md); steady-state in phases two and three |
+| **SOC 2 Type II** | Held. 2025 report plus a 2026 bridge letter and a SOC 3 on the trust center. Since March 2026 it is also the accepted entry framework for a FedRAMP Class A certification, which makes it strategically heavier than a routine commercial audit | Calendar and evidence inventory in [days 1 to 30](../generated/30-60-90/days-1-30.md); steady-state in phases two and three |
 | **ISO 27001:2022** | Held. A real certificate from an accredited body sits on the trust center, while a public docs page describes ISO as "alignment," which understates a certification they paid for. That wording goes on the claims-consistency list | Same runbook; surveillance-cycle discipline plus the ISMS artifacts (scope, Statement of Applicability, management review, internal audit) that surveillance auditors actually check |
 
 ## Contract and legal obligations
@@ -21,7 +21,7 @@ Every framework and regime this role touches, what Mattermost's relationship to 
 
 | Regime | Mattermost's position | Where it lives in the plan |
 |---|---|---|
-| **FedRAMP** | Not a certified CSP; present as a named service inside a partner's Class D Rev5 package. The strategy question this raises is [open question 5](../hiring-manager-questions.md) | [Regulatory clock](regulatory-clock.md); the strategy decision brief in the day-30 regulatory memo |
+| **FedRAMP** | Not a certified CSP; present as a named service inside a partner's Class D Rev5 package. The strategy question this raises is [open question 5](../findings/open-questions.md) | [Regulatory clock](regulatory-clock.md); the strategy decision brief in the day-30 regulatory memo |
 | **DoD Impact Levels / Platform One CATO** | Certificate to Field under Platform One's continuous ATO; deployments described at IL4 through IL6 | Precision language in the customer-assurance pass, since inherited-versus-held is exactly the distinction that gets flattened in the field |
 | **NIST 800-53** | The catalog underneath FedRAMP baselines and a named JD requirement. My engine renders an 800-53 profile from the same control set that renders everything else | [Engine bridge](engine-bridge.md); becomes primary the moment the FedRAMP strategy question gets a real answer |
 

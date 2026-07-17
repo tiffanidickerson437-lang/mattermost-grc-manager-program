@@ -47,7 +47,7 @@ Method notes:
 
 ## Step 5: The roadmap (the deliverable's second half)
 
-Regime-aware, per the fork in the [plan overview](../30-60-90/README.md):
+Regime-aware, per the fork in the [plan overview](../generated/30-60-90/README.md):
 
 - **Common to all branches (through ~day 75):** close POA&M items by date, wire the highest-value requirements into the continuous-monitoring pipeline so evidence stays current without a fire drill, keep the SSP living.
 - **Branch: third-party assessment returns.** The evidence chain built above is already assessor-grade. Roadmap adds C3PAO procurement, scheduling lead times, and budget.

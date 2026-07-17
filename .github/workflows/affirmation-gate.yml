@@ -1,0 +1,98 @@
+name: CMMC affirmation gate
+
+# 32 CFR 170.22 requires a named senior human to affirm CONTINUING compliance
+# in SPRS, annually, under False Claims Act exposure. This workflow computes
+# whether the conditions for that signature hold -- today, not next July.
+#
+# It also reads 32 CFR 170 itself on every run. The CMMC Reform Task Force
+# reports to the DoW CIO around mid-September 2026; whatever it changes lands
+# as an amendment to that part, and eCFR publishes the date. So the week the
+# rule moves, this goes red.
+#
+# No step may swallow a failure: no `|| true`, no continue-on-error. An
+# affirmation is the last place on earth for a green check that cannot go red.
+
+on:
+  schedule:
+    # Weekly. The affirmation is annual; the question "could we affirm today?"
+    # is not, and the whole point is to never learn the answer in July.
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+  push:
+    paths:
+      - "assessment/data/affirmation_gate.py"
+      - "assessment/data/test_affirmation_gate.py"
+      - "assessment/data/sprs-weights.json"
+      - "assessment/data/examples/**"
+      - ".github/workflows/affirmation-gate.yml"
+  pull_request:
+    paths:
+      - "assessment/data/**"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  affirm:
+    name: Can the Affirming Official sign today?
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --disable-pip-version-check pyyaml
+
+      # The gate runs against planted defects before it runs for real. Two of
+      # these are arithmetic identities from the DoD Assessment Methodology --
+      # all-implemented is exactly 110, none-implemented is exactly -203 -- so
+      # this step also proves the weights file itself. A gate that cannot block
+      # must never be the reason an affirmation looks clear.
+      - name: Prove the gate blocks
+        run: python3 assessment/data/test_affirmation_gate.py
+
+      # Synthetic state, on purpose. No Mattermost control state exists in this
+      # repo and none is claimed; state is only knowable inside the boundary.
+      # On day one the --state flag points at computed evidence instead.
+      - name: Compute the affirmation gate (synthetic worked example)
+        run: |
+          python3 assessment/data/affirmation_gate.py \
+            --state assessment/data/examples/worked-example.state.yaml
+
+      - name: Open a blocker issue
+        if: failure() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          title="Affirmation gate blocked $(date -u +%Y-%m-%d)"
+          if gh issue list --state open --search "$title" --json title \
+              --jq '.[].title' | grep -Fqx "$title"; then
+            echo "Already open for today; not duplicating."
+            exit 0
+          fi
+          gh issue create --title "$title" --label "compliance,federal,cmmc" --body \
+          "The scheduled 32 CFR 170.22 affirmation gate did not come back clear.
+
+          Either a condition for affirming continuing compliance no longer holds, or the
+          gate could not evaluate. Both block. Neither is a pass.
+
+          A person has to read the run log, clear the blockers, and decide. The gate does
+          not sign and cannot: 170.22 gives that act to a named Affirming Official with
+          False Claims Act exposure. What it removes is finding out in July.
+
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: Publish the packet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: affirmation-packet
+          path: assessment/affirmation-packet.md
+          if-no-files-found: error

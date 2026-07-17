@@ -10,7 +10,7 @@ A September start puts the CMMC Reform Task Force report (~11 September) inside 
 
 | Action | Detail | Feeds metric |
 |---|---|---|
-| Manager alignment session | Walk through this plan with the hiring manager. Agree the day-90 deliverable definition in writing, especially the recalibrated CMMC target (see [open question 4](../hiring-manager-questions.md)) | 1 |
+| Manager alignment session | Walk through this plan with the hiring manager. Agree the day-90 deliverable definition in writing, especially the recalibrated CMMC target (see [open question 4](../../findings/open-questions.md)) | 1 |
 | Stakeholder tour | Security leadership, security operations, product security, the federal subsidiary's leadership, sales and revenue ops (questionnaire flow), legal (export compliance, contracts), people ops (training and attestation) | all |
 | Access requests, day one | Drata, Conveyor, the cloud consoles, ticketing, the handbook repo, SPRS (or whoever holds the SPRS relationship), the trust center admin | 3 |
 | Entity scoping answer | Pin down where federal compliance lives (parent vs. Mattermost Federal, Inc.) and what that means for assessment boundaries | 1 |
@@ -36,7 +36,7 @@ Output: a current-state map, one page per program, each ending in a red/amber/gr
 
 One memo, for the security leadership audience, that does three jobs:
 
-1. States Mattermost's position under the suspension: what we are obligated to today (800-171 Rev 2, DFARS 7012, SPRS self-assessment currency), what we are no longer able to buy (C3PAO certification), and what we do about it (nothing panicked; the evidence standard rises, see [runbook](../runbooks/cmmc-l2-self-assessment.md)).
+1. States Mattermost's position under the suspension: what we are obligated to today (800-171 Rev 2, DFARS 7012, SPRS self-assessment currency), what we are no longer able to buy (C3PAO certification), and what we do about it (nothing panicked; the evidence standard rises, see [runbook](../../runbooks/cmmc-l2-self-assessment.md)).
 2. Reads the Task Force report the day it lands and maps its recommendations onto the roadmap fork in the [plan overview](README.md).
 3. Flags the FedRAMP vocabulary change and the Class A / 20x situation as a strategy decision the company should make deliberately rather than by default. Not a recommendation yet; a decision brief with the options priced.
 
