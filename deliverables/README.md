@@ -190,7 +190,7 @@ Built and running against a synthetic worked example. Needs day-one access to co
 anything true, because control state is only knowable inside the boundary.
 
 Also unresolved from outside: **whether Mattermost holds a CMMC status at all.** No
-CMMC badge on the trust center, no CMMC document among its public six, and the CMMC
+CMMC certification appears in the public record I can see, and the CMMC
 page they publish is product guidance for contractor customers — not a company
 certification. The recruiter says Level 2 is complete; the posting says a gap
 assessment is the first 90-day deliverable. Those describe different jobs. That's

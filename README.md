@@ -52,7 +52,7 @@ Four of the six are the same defect wearing different clothes: **a machine-reada
 
 ## The one that isn't CMMC and isn't FedRAMP
 
-On 13 July 2026 the DoW CIO suspended CMMC Phase II. The same office publishes **[Brilliant at the Basics](https://dowcio.war.gov/BrilliantBasics/)** — a Top 10 of IT practices it tells the Defense Industrial Base to actually do, framed explicitly as stripping away *"administrative complexity and compliance overhead."* No assessment, no contract clause, nobody will ever audit against it. It is the clearest public statement of what the customer thinks good looks like, published by the office that just took the credential away.
+On 13 July 2026 the DoW CIO [suspended CMMC Phase II](https://dowcio.war.gov/CMMC/). The same office publishes **[Brilliant at the Basics](https://dowcio.war.gov/BrilliantBasics/)** — a Top 10 of IT practices it tells the Defense Industrial Base to actually do, framed explicitly as stripping away *"administrative complexity and compliance overhead."* No assessment, no contract clause, nobody will ever audit against it. It is the clearest public statement of what the customer thinks good looks like, published by the office that just took the credential away.
 
 So [`brilliant_basics.py`](assessment/data/brilliant_basics.py) asks what the enforced baseline can see of it:
 
