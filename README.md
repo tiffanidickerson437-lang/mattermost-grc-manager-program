@@ -22,7 +22,7 @@ The program is further along than most at this stage. The certifications are hel
 
 ```mermaid
 flowchart TD
-  CFG["<b>companies/mattermost.config.yaml</b><br/>one file. every value traces to a public source."]
+  CFG["<b>mattermost.config.yaml</b><br/>one file. every value traces to a public source."]
   ENG(["<b>compliance-program</b> engine"])
   CTL["<b>45 in-scope controls</b> — each carries the reason it is in scope"]
 
@@ -55,7 +55,8 @@ Change the config, the program re-renders. Framework choice becomes a rendering 
 
 ## Start here: the quick win
 
-Mattermost publishes its customer-questionnaire [answer bank](https://handbook.mattermost.com/operations/operations/company-policies/security-policies) in the open — ~80 questions, clean markdown. Good material. It's also **96% "Yes."**
+Mattermost publishes its customer-questionnaire [answer bank](https://handbook.mattermost.com/operations/operations/company-policies/security-policies#common-security-related-questions-for-enterprises) publicily available — ~80 questions, clean markdown. Good material. It's also not very detailed with **96% of answers stating just "Yes."**
+
 
 Governance question 8 asks whether internet-facing privileged accounts contain PII, SSNs, or patient health records. The published answer is **"Yes"** — a question where Yes is a disclosure, sitting in a long run of questions where Yes is the good answer. It contradicts question 9 directly beneath it, which says all PII is encrypted.
 
@@ -152,9 +153,3 @@ python3 assessment/data/test_brilliant_basics.py                 # 15 tests
 ```
 
 Same config, same library, same output every run.
-
----
-
-Happy to walk through any of it. The first move in the seat would be turning those [open questions](findings/open-questions.md) into a 90-day plan agreed in writing — starting with where CMMC really stands and how the September report changes the target.
-
-— Tiffani Dickerson · [compliance-program engine](https://github.com/tiffanidickerson437-lang/compliance-program)
