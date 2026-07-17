@@ -1,4 +1,4 @@
-# Mattermost, onboarded
+# Mattermost,Agentic Compliance as Code Program
 
 **Describes Mattermost in one config file, renders it into a working GRC program, and ships four instruments that run against Mattermost's live public surface. One of them found a defect in the published answer bank. It runs in about a second.**
 
