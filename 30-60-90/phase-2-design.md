@@ -6,7 +6,7 @@ Objective: run the CMMC Level 2 self-assessment on the agreed boundary to an evi
 
 ## Workstream A: The CMMC Level 2 self-assessment (metric 1)
 
-Full procedure in the [runbook](../06-evidence-and-audit/cmmc-l2-self-assessment.md). The shape of it:
+Full procedure in the [runbook](../04-evidence-and-audit/cmmc-l2-self-assessment.md). The shape of it:
 
 | Step | Detail |
 |---|---|
@@ -20,7 +20,7 @@ Decision point at day 45: if the inventory found a previously posted SPRS score 
 
 ## Workstream B: The continuous-monitoring pilot (metric 3)
 
-Full procedure in the [runbook](../06-evidence-and-audit/continuous-controls-pilot.md). Design constraints:
+Full procedure in the [runbook](../04-evidence-and-audit/continuous-controls-pilot.md). Design constraints:
 
 - One control family, chosen where last cycle's audit pain was worst (access review is the usual winner, asset inventory the usual runner-up; the day-30 inventory decides).
 - Drata stays the system of record. The pilot reads from it and from the underlying systems; it does not write around it. The architecture decision memo (below) is where any bigger change gets decided.
@@ -40,7 +40,7 @@ The Drata question from the [hiring manager questions](../00-governance/open-que
 
 | Artifact | Why now |
 |---|---|
-| Internal AI usage policy, drafted | If the day-one answer was "none exists," this is the fastest meaningful gap to close. Drafted using the approval-tier vocabulary the product itself shipped in Agents V2, so the policy speaks the company's own language. Outline in the [runbook](../04-ai-governance/internal-ai-policy.md). Routed for review, targeted for adoption by day 90 |
+| Internal AI usage policy, drafted | If the day-one answer was "none exists," this is the fastest meaningful gap to close. Drafted using the approval-tier vocabulary the product itself shipped in Agents V2, so the policy speaks the company's own language. Outline in the [runbook](../02-ai-governance/internal-ai-policy.md). Routed for review, targeted for adoption by day 90 |
 | Vulnerability-process control family | Mattermost's published Product Vulnerability Process is genuinely strong. This step adopts it into the GRC control library as a proper control family with evidence expectations, so the next audit inherits what product security already does well instead of re-documenting it |
 
 ## Workstream E: Audit cycle steady-state (metric 2)

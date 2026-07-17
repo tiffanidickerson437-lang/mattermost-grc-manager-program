@@ -9,14 +9,14 @@ These exist now, in this repo, and you can run or read each one without waiting 
 
 | Deliverable | Status | Where it lives | Hold it in your hand |
 |---|---|---|---|
-| 1. Questionnaire answer-bank linter | **Shipped, runs live** | [`06-evidence-and-audit/questionnaire-linter/`](../06-evidence-and-audit/questionnaire-linter/) | `python3 06-evidence-and-audit/questionnaire-linter/lint_answers.py` |
-| 2. Internal AI policy draft | **Drafted** | [`04-ai-governance/internal-ai-policy.md`](../04-ai-governance/internal-ai-policy.md) | Read it; it is written in Mattermost's own HITL vocabulary |
-| 3. Public claims consistency check | **Built** | [`07-stakeholder-management/public-claims-consistency/`](../07-stakeholder-management/public-claims-consistency/) | A [redline](../07-stakeholder-management/public-claims-consistency/claims-redline.md) plus `python3 07-stakeholder-management/public-claims-consistency/check_claims.py` |
-| 4. CODEOWNERS + merge-gate patch | **Built, PR-ready** | [`05-secure-development/codeowners-merge-gate/`](../05-secure-development/codeowners-merge-gate/) | The [corrected file](../05-secure-development/codeowners-merge-gate/proposed-CODEOWNERS), settings, and [PR body](../05-secure-development/codeowners-merge-gate/PR-body.md) |
-| 5. `llms.txt` split-tree fix | **Built, PR-ready** | [`05-secure-development/llms-txt-fix/`](../05-secure-development/llms-txt-fix/) | The [proposed fix](../05-secure-development/llms-txt-fix/proposed-fix.md) plus `python3 05-secure-development/llms-txt-fix/validate_llms_txt.py` |
+| 1. Questionnaire answer-bank linter | **Shipped, runs live** | [`04-evidence-and-audit/questionnaire-linter/`](../04-evidence-and-audit/questionnaire-linter/) | `python3 04-evidence-and-audit/questionnaire-linter/lint_answers.py` |
+| 2. Internal AI policy draft | **Drafted** | [`02-ai-governance/internal-ai-policy.md`](../02-ai-governance/internal-ai-policy.md) | Read it; it is written in Mattermost's own HITL vocabulary |
+| 3. Public claims consistency check | **Built** | [`05-stakeholder-management/public-claims-consistency/`](../05-stakeholder-management/public-claims-consistency/) | A [redline](../05-stakeholder-management/public-claims-consistency/claims-redline.md) plus `python3 05-stakeholder-management/public-claims-consistency/check_claims.py` |
+| 4. CODEOWNERS + merge-gate patch | **Built, PR-ready** | [`03-secure-development/codeowners-merge-gate/`](../03-secure-development/codeowners-merge-gate/) | The [corrected file](../03-secure-development/codeowners-merge-gate/proposed-CODEOWNERS), settings, and [PR body](../03-secure-development/codeowners-merge-gate/PR-body.md) |
+| 5. `llms.txt` split-tree fix | **Built, PR-ready** | [`03-secure-development/llms-txt-fix/`](../03-secure-development/llms-txt-fix/) | The [proposed fix](../03-secure-development/llms-txt-fix/proposed-fix.md) plus `python3 03-secure-development/llms-txt-fix/validate_llms_txt.py` |
 | 6. The Drata answer | **Written** | [Below](#6-drata-as-an-evidence-gateway--the-so-what-happens-to-drata-answer) | The day-one answer to "so what happens to Drata?" |
 | 7. FedRAMP business case | Needs day-one data | [Below](#7-the-framework-selection-business-case--should-we-get-fedramp-next) | The framing and the public half of the case |
-| 8. Affirmation gate on real state | Built, needs day-one access | [`06-evidence-and-audit/`](../06-evidence-and-audit/) | `python3 06-evidence-and-audit/data/affirmation_gate.py --state 06-evidence-and-audit/data/examples/worked-example.state.yaml` |
+| 8. Affirmation gate on real state | Built, needs day-one access | [`04-evidence-and-audit/`](../04-evidence-and-audit/) | `python3 04-evidence-and-audit/data/affirmation_gate.py --state 04-evidence-and-audit/data/examples/worked-example.state.yaml` |
 
 Every item starts from something Mattermost publishes. Nothing here rests on
 knowledge of their internal posture, because there isn't any, and the ones that
@@ -30,7 +30,7 @@ framed as something to hand over, not something to point at.
 
 ## Shipped
 
-### 1. Questionnaire answer-bank linter → [`questionnaire-linter/`](../06-evidence-and-audit/questionnaire-linter/)
+### 1. Questionnaire answer-bank linter → [`questionnaire-linter/`](../04-evidence-and-audit/questionnaire-linter/)
 
 **Buildable from public data.** Runs today, against their live page, in about a second.
 
@@ -71,7 +71,7 @@ decision to build them.
 
 ### 2. Internal AI policy, written in their own vocabulary
 
-*Specified. Draft procedure in [`../04-ai-governance/internal-ai-policy.md`](../04-ai-governance/internal-ai-policy.md).*
+*Specified. Draft procedure in [`../02-ai-governance/internal-ai-policy.md`](../02-ai-governance/internal-ai-policy.md).*
 
 **The sharpest gap in the research, and the one with a ready-made answer.**
 
@@ -98,9 +98,9 @@ So the policy doesn't need inventing. It needs writing down in the vocabulary th
 engineers already settled on, four weeks ago, in their own product. The argument
 about whether AI should be gated is already won internally.
 
-Draft procedure: [`../04-ai-governance/internal-ai-policy.md`](../04-ai-governance/internal-ai-policy.md)
+Draft procedure: [`../02-ai-governance/internal-ai-policy.md`](../02-ai-governance/internal-ai-policy.md)
 
-### 3. Public claims consistency check → [`public-claims-consistency/`](../07-stakeholder-management/public-claims-consistency/)
+### 3. Public claims consistency check → [`public-claims-consistency/`](../05-stakeholder-management/public-claims-consistency/)
 
 **Built.** A redline for every statement and a runnable checker that flags retired FedRAMP
 vocabulary and routes a human. Two live, public, indexed pages reachable from the same nav
@@ -128,7 +128,7 @@ ballgame in a federal questionnaire, and it's what gets flattened to "we're FedR
 High" on a sales call. The deliverable protects the correct claim, not just the
 wrong ones.
 
-### 4. CODEOWNERS + merge gate patch → [`codeowners-merge-gate/`](../05-secure-development/codeowners-merge-gate/)
+### 4. CODEOWNERS + merge gate patch → [`codeowners-merge-gate/`](../03-secure-development/codeowners-merge-gate/)
 
 **Built.** A corrected CODEOWNERS file, the exact branch-protection settings, and a PR body
 written to their contributor guide. A pull request, not a proposal. Verified against the
@@ -147,7 +147,7 @@ So approval today is a social convention held by three people with write access,
 ownership stated in prose isn't enforced by the file that enforces ownership. Deliverable
 #1 exists because of exactly this: no owner on the answer-bank file, no gate on the merge.
 
-### 5. `llms.txt` split-tree fix → [`llms-txt-fix/`](../05-secure-development/llms-txt-fix/)
+### 5. `llms.txt` split-tree fix → [`llms-txt-fix/`](../03-secure-development/llms-txt-fix/)
 
 **Built.** A runnable validator that fails on the live file today, a saved copy of that
 file, and the concrete fix. Their `llms.txt` is real, served as `text/markdown`, with every
@@ -216,7 +216,7 @@ This is deliverable #7 rather than #1 because doing it properly means costing it
 time and spend to attain, against the deals and markets it unlocks. That needs
 their pipeline, not public data. **Compliance ROI, not a vanity bar.**
 
-### 8. The affirmation gate, pointed at real state → [`../06-evidence-and-audit/`](../06-evidence-and-audit/)
+### 8. The affirmation gate, pointed at real state → [`../04-evidence-and-audit/`](../04-evidence-and-audit/)
 
 Built and running against a synthetic worked example. Needs day-one access to compute
 anything true, because control state is only knowable inside the boundary.

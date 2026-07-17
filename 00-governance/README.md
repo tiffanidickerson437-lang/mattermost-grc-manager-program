@@ -19,11 +19,11 @@ Two rules govern this directory:
 | # | Finding | Evidence | Deliverable |
 |---|---|---|---|
 | 01 | Policies are maintained in Drata (internal-only) | [handbook](https://handbook.mattermost.com/operations/security/policies) | [Drata as a gateway](../docs/deliverables.md#6-drata-as-an-evidence-gateway--the-so-what-happens-to-drata-answer) |
-| 02 | No merge gate; security isn't in CODEOWNERS | [GitHub API](https://github.com/mattermost/mattermost-handbook/blob/0.2.1/CODEOWNERS) | [CODEOWNERS patch](../05-secure-development/codeowners-merge-gate/) |
+| 02 | No merge gate; security isn't in CODEOWNERS | [GitHub API](https://github.com/mattermost/mattermost-handbook/blob/0.2.1/CODEOWNERS) | [CODEOWNERS patch](../03-secure-development/codeowners-merge-gate/) |
 | 03 | No internal AI policy, while publishing AI risk guidance for others | [llms.txt](https://handbook.mattermost.com/llms.txt), [blog](https://mattermost.com/blog/sovereign-ai-risk-assessment-ciso-questions/) | [AI policy in their own vocabulary](../docs/deliverables.md#2-internal-ai-policy-written-in-their-own-vocabulary) |
-| 04 | The public docs contradict each other | [certifications](https://docs.mattermost.com/product-overview/certifications-and-compliance.html), [federal FAQ](https://docs.mattermost.com/product-overview/faq-federal-procurement.html) | [Claims consistency check](../07-stakeholder-management/public-claims-consistency/) |
-| 05 | The questionnaire answer bank has a defect | [live page](https://handbook.mattermost.com/operations/operations/company-policies/security-policies) | **[Shipped: the linter](../06-evidence-and-audit/questionnaire-linter/)** |
-| 06 | `llms.txt` publishes two conflicting trees | [llms.txt](https://handbook.mattermost.com/llms.txt) | [Split-tree fix](../05-secure-development/llms-txt-fix/) |
+| 04 | The public docs contradict each other | [certifications](https://docs.mattermost.com/product-overview/certifications-and-compliance.html), [federal FAQ](https://docs.mattermost.com/product-overview/faq-federal-procurement.html) | [Claims consistency check](../05-stakeholder-management/public-claims-consistency/) |
+| 05 | The questionnaire answer bank has a defect | [live page](https://handbook.mattermost.com/operations/operations/company-policies/security-policies) | **[Shipped: the linter](../04-evidence-and-audit/questionnaire-linter/)** |
+| 06 | `llms.txt` publishes two conflicting trees | [llms.txt](https://handbook.mattermost.com/llms.txt) | [Split-tree fix](../03-secure-development/llms-txt-fix/) |
 
 ---
 
@@ -204,7 +204,7 @@ questionnaires and trust center content maintained to unblock deal cycles."* Thi
 block revenue loudly. It blocks it one security reviewer at a time, and nobody attributes
 the slow deal to line 87 of a markdown file.
 
-→ **[The linter](../06-evidence-and-audit/questionnaire-linter/)** — runs against their live page in
+→ **[The linter](../04-evidence-and-audit/questionnaire-linter/)** — runs against their live page in
 about a second, finds it both ways (polarity and contradiction), and never decides.
 
 ---

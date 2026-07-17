@@ -24,7 +24,7 @@ Presented to security leadership as a walkthrough, with the federal subsidiary's
 
 ## Workstream C: Customer assurance at steady state (metric 4)
 
-Full procedure in the [runbook](../07-stakeholder-management/customer-assurance-pass.md). By day 90:
+Full procedure in the [runbook](../05-stakeholder-management/customer-assurance-pass.md). By day 90:
 
 - The questionnaire answer bank reviewed end to end, every answer traceable to a control or an evidence artifact, review-gated so future edits get a second set of eyes.
 - Trust center contents current, with an owner and refresh cadence per document.

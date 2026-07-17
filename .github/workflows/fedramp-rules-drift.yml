@@ -18,13 +18,13 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "06-evidence-and-audit/data/fedramp-20x-ksi-mapping.yaml"
-      - "06-evidence-and-audit/data/upstream_drift.py"
-      - "06-evidence-and-audit/data/test_upstream_drift.py"
+      - "04-evidence-and-audit/data/fedramp-20x-ksi-mapping.yaml"
+      - "04-evidence-and-audit/data/upstream_drift.py"
+      - "04-evidence-and-audit/data/test_upstream_drift.py"
       - ".github/workflows/fedramp-rules-drift.yml"
   pull_request:
     paths:
-      - "06-evidence-and-audit/data/**"
+      - "04-evidence-and-audit/data/**"
 
 permissions:
   contents: read
@@ -52,11 +52,11 @@ jobs:
       # exists because the first adversarial pass gutted the comparison to
       # `return []` and the live run still reported a clean reconcile.
       - name: Prove the checker detects drift
-        run: python3 06-evidence-and-audit/data/test_upstream_drift.py
+        run: python3 04-evidence-and-audit/data/test_upstream_drift.py
 
       - name: Reconcile against live upstream
         id: reconcile
-        run: python3 06-evidence-and-audit/data/upstream_drift.py
+        run: python3 04-evidence-and-audit/data/upstream_drift.py
 
       # Only reached when reconcile exits non-zero. Exit 1 is drift (FedRAMP
       # moved); exit 2 is could-not-check (network, moved schema, bad parse) --
@@ -86,9 +86,9 @@ jobs:
           **What a human has to do — the workflow deliberately cannot do this itself:**
 
           1. Read the run log linked below for the specific findings.
-          2. Diff the upstream ruleset against `06-evidence-and-audit/data/fedramp-20x-ksi-mapping.yaml`.
+          2. Diff the upstream ruleset against `04-evidence-and-audit/data/fedramp-20x-ksi-mapping.yaml`.
           3. Re-derive the affected mappings against the current 800-53 anchors.
-          4. Bump `RECONCILED_AGAINST` in `06-evidence-and-audit/data/upstream_drift.py`.
+          4. Bump `RECONCILED_AGAINST` in `04-evidence-and-audit/data/upstream_drift.py`.
           5. Open a PR. The merge is the authorization: the mapping is not current
              because a job said so, it is current because a person re-derived it and
              someone approved the derivation.
@@ -106,5 +106,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: upstream-conformance-receipt
-          path: 06-evidence-and-audit/upstream-conformance-receipt.md
+          path: 04-evidence-and-audit/upstream-conformance-receipt.md
           if-no-files-found: error

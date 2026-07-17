@@ -71,10 +71,10 @@ summary:
   - 01-risk-management
   - 02-controls
   - 03-tprm
-  - 04-ai-governance
-  - 05-secure-development
-  - 06-evidence-and-audit
-  - 07-stakeholder-management
+  - 02-ai-governance
+  - 03-secure-development
+  - 04-evidence-and-audit
+  - 05-stakeholder-management
   ai_governance_enabled: true
   triggers_fired:
   - ai-products -> AAT-01
