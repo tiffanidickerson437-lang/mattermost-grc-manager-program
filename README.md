@@ -6,7 +6,7 @@ This repo has two halves. [Findings](findings/) is what is observably true about
 
 Nothing here claims to know anything about Mattermost's internal security posture. Every claim traces to a public primary source I have researched and found current as of 17 July 2026, and where the public record runs out I wrote that down as an [open question](findings/open-questions.md) instead of filling it in.
 
-The program is further along than most I have seen at this stage. Which is exciting! You hold SOC 2 Type II and ISO 27001:2022 today, the handbook is genuinely docs-as-code, and your own engineers have already written a human-in-the-loop AI model. I am excited to contribute to the groundwork already done by adding some of my build work into it. The role, as it was described to me, is to inherit a working GRC program and scale/maintain it rather than start one from scratch.
+The program is further along than most I have seen at this stage. Which is exciting! You hold various compliance certifications today, the handbook is genuinely docs-as-code, and your own engineers have already written a human-in-the-loop AI model. I am excited to contribute to the groundwork already done by adding some of my build work into it. The role, as it was described to me, is to inherit a working GRC program and scale/maintain it rather than start one from scratch.
 
 That is the spirit of everything here. Where I point at a gap, I mean it as the next piece of work and something to hand over. I never mean it as a criticism of the work completed thus far as it is highly impressive.
 
