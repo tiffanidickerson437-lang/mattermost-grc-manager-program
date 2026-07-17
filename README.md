@@ -28,7 +28,7 @@ Change the config and the program re-renders. Adding a framework is a crosswalk 
 | **Controls selected** | 45 from the Living Control Set, each carrying the reason it is in scope; the minors-consent control is correctly excluded from the rendered program because Mattermost does not process children's data |
 | **Hero surfaces** | MON-01 (continuous monitoring, the drift-opens-a-ticket loop) and the evidence-and-audit pillar, because the posting's center of gravity is replacing manual evidence collection with continuous controls monitoring |
 | **Stack as evidence sources** | GitHub, Jira, GitBook, Drata, and Mattermost itself, all named from their public handbook and org; the IdP is deliberately unset until discovery confirms it |
-| **Declared honestly** | NIST 800-171 Rev 2 / CMMC is Mattermost's most time-sensitive obligation and the engine does not yet carry that crosswalk. It is the first engine extension the 30/60/90 commits to, stated in the config rather than papered over, because coverage here is computed, never asserted |
+| **The federal obligation, mapped** | NIST 800-171 Rev 2 is Mattermost's most time-sensitive obligation under the CMMC suspension, and it is now carried in the engine as a first-class framework. All 110 requirements resolve to 36 controls, and the [SPRS-weighted self-assessment workbook](assessment/nist-800-171-rev2-workbook.md) is rendered and ready to walk. The instrument most programs would spend month two building is already in this repo |
 
 ## Why this repo exists
 
@@ -42,6 +42,7 @@ So the plan in this repo is regime-aware by construction: it holds the same evid
 |---|---|
 | [`companies/mattermost.config.yaml`](companies/mattermost.config.yaml) | The single input: Mattermost expressed as an engine configuration, every value traced to public sources |
 | [`companies/mattermost/value.json`](companies/mattermost/value.json) | The value overlay: six friction points from the research, the real 30/60/90, and the collateral map |
+| [`assessment/`](assessment/) | The federal readiness instruments: the [110-requirement 800-171 workbook](assessment/nist-800-171-rev2-workbook.md) with SPRS weights, and the [46-KSI FedRAMP 20x map](assessment/fedramp-20x-ksi-map.md). Both generate from source-of-truth data by `assessment/data/render.py` |
 | [`generated/`](generated/) | What the engine rendered: the in-scope control selection with reasons, the OSCAL profile selection, and the full Mattermost data payload |
 | [`30-60-90/`](30-60-90/) | The first-90-days plan in full, phase by phase, mapped to the role's five published success metrics |
 | [`hiring-manager-questions.md`](hiring-manager-questions.md) | The questions whose answers change the plan, ranked, with what each answer decides |

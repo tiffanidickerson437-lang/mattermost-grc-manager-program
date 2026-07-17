@@ -102,11 +102,97 @@ frameworks:
   - PES-01
   - AAT-02
   note: null
+- slug: nist-800-171
+  name: NIST SP 800-171 Rev 2
+  profile: profiles/nist-800-171.profile.oscal.json
+  controls:
+  - AST-01
+  - AST-02
+  - AST-03
+  - BCD-02
+  - CHG-02
+  - CHG-02-BASELINE
+  - CRY-01
+  - CRY-02
+  - DCH-01
+  - END-01
+  - END-02
+  - GOV-01
+  - GOV-02
+  - GOV-03
+  - GOV-04
+  - HRS-01
+  - IAC-17
+  - IAM-01
+  - IAM-03
+  - IAM-04
+  - IAM-05
+  - IRO-01
+  - IRO-02
+  - MON-01
+  - MON-02
+  - NET-01
+  - NET-02
+  - PES-01
+  - RSK-01
+  - RSK-02
+  - SAT-02
+  - SDLC-01
+  - TPM-01
+  - TPM-02
+  - VPM-01
+  - VPM-02
+  note: null
 - slug: nist-800-53
-  name: nist-800-53
-  profile: null
-  controls: []
-  note: no owned control mapped yet; tracked as a forward target
+  name: NIST 800-53 r5
+  profile: profiles/nist80053.profile.oscal.json
+  controls:
+  - AAT-01
+  - PRI-03.13
+  - IAC-17
+  - CHG-02
+  - MON-01
+  - TPM-01
+  - IRO-01
+  - CRY-01
+  - VPM-01
+  - DCH-01
+  - SAT-02
+  - GOV-01
+  - GOV-02
+  - GOV-03
+  - GOV-04
+  - RSK-01
+  - RSK-02
+  - AST-01
+  - AST-02
+  - AST-03
+  - IAM-01
+  - IAM-03
+  - IAM-04
+  - IAM-05
+  - CHG-02-BASELINE
+  - CRY-02
+  - DCH-02
+  - PRI-01
+  - PRI-02
+  - MON-02
+  - NET-01
+  - NET-02
+  - SDLC-01
+  - SDLC-02
+  - SDLC-03
+  - VPM-02
+  - END-01
+  - END-02
+  - IRO-02
+  - BCD-01
+  - BCD-02
+  - TPM-02
+  - HRS-01
+  - PES-01
+  - AAT-02
+  note: null
 - slug: nist-ai-rmf
   name: NIST AI RMF 1.0
   profile: profiles/nist-ai-rmf.profile.oscal.json

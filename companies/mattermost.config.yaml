@@ -46,19 +46,22 @@ frameworks:
     - soc2                           # held: Type II report (2025) + bridge letter (2026) + SOC 3 on the trust center
     - iso27001                       # held: ISO/IEC 27001:2022 accredited certificate on the trust center
   emerging:                          # obligations and build targets this role owns
+    - nist-800-171                   # THE anchor obligation: Rev 2 by self-assessment under the 2026-07-13
+                                     # CMMC Phase II suspension. Full engine crosswalk: all 110 requirements
+                                     # mapped to 36 owned controls with 800-53 anchors; SPRS-weighted
+                                     # workbook rendered at assessment/nist-800-171-rev2-workbook.md
     - nist-800-53                    # the catalog under FedRAMP baselines; named in the JD; renders as an engine profile
     - nist-ai-rmf                    # they ship agentic AI to regulated buyers; JD asks for AI-native GRC
     - iso42001                       # AI management system; forward target consistent with the sovereign-AI product line
     - gdpr                           # live obligation: published DPA, privacy@ intake, DSAR/deletion stubs, EU entities
 
-  # NOT YET IN THE ENGINE, DECLARED HONESTLY: NIST 800-171 Rev 2 / CMMC is
-  # Mattermost's most time-sensitive obligation (self-assessment regime under
-  # the 2026-07-13 Phase II suspension) and this engine does not yet carry an
-  # 800-171 crosswalk. That mapping is the first engine extension the 30/60/90
-  # commits to, alongside a vulnerability-response control family adopted from
-  # Mattermost's own published Product Vulnerability Process. The gap is stated
-  # here rather than papered over because the engine's operating rule is that
-  # coverage is computed, never asserted.
+  # FedRAMP is deliberately not a framework row: Mattermost reaches federal
+  # buyers through a partner's package today, so 20x readiness is carried as a
+  # mapping artifact instead (all 46 CR26 Key Security Indicators scored
+  # against the control set at assessment/fedramp-20x-ksi-map.md), ready to
+  # become the gap analysis the day the own-listing strategy question resolves.
+  # A vulnerability-response control family adopted from Mattermost's own
+  # published Product Vulnerability Process remains the next engine extension.
 
 stack:
   # Systems of record that evidence computes from. Verified entries come from
