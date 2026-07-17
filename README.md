@@ -10,7 +10,7 @@ The program is further along than most I have seen at this stage. Which is excit
 
 That is the spirit of everything here. Where I point at a gap, I mean it as the next piece of work and something to hand over. I never mean it as a criticism of the work completed thus far as it is highly impressive.
 
-## A Gap Surfaced From My Research
+## 1 Quick Win I Surfaced From My Research
 
 Mattermost publishes its customer-questionnaire answer bank in the open: about 80 questions, served as clean markdown. It is good material. It is also 96% "Yes," and a single problem answer is easy to miss in a long column of "Yes."
 
