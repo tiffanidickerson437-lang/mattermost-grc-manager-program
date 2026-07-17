@@ -1,6 +1,6 @@
 # The first 90 days
 
-One plan, three phases, built against the role's five published success metrics and the regulatory calendar as it stands on 16 July 2026.
+One plan in three phases, built against the role's five published success metrics and the regulatory calendar as it stands on 16 July 2026.
 
 ## The five metrics, verbatim from the posting
 
@@ -10,7 +10,7 @@ One plan, three phases, built against the role's five published success metrics 
 4. "Customer security questionnaires and trust center content maintained to unblock deal cycles"
 5. "GRC team grown and operating as a scalable, program-driven function"
 
-Every line item in the three phase files maps back to one of these numbers. Nothing in the plan exists for its own sake.
+Every line item in the three phase files maps back to one of these five numbers, so nothing in the plan exists for its own sake.
 
 ## The one thing this plan does that a generic plan cannot
 
@@ -26,7 +26,7 @@ The roadmap half of the deliverable forks on the CMMC Reform Task Force, which r
 | Self-assessment regime continues | Roadmap hardens the SPRS position: evidence refresh cadence, POA&M closure dates, affirmation workflow |
 | A restructured framework ("CMMC 3.0") | The 800-171 Rev 2 baseline work transfers whole; roadmap re-maps deltas when the new model publishes |
 
-The work of the first 90 days is identical in all three branches until roughly day 75. That is deliberate.
+The plan is deliberately built so the work of the first 90 days stays identical in all three branches until roughly day 75.
 
 ## Phase structure
 

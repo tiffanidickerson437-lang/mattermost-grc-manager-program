@@ -7,7 +7,7 @@ The draft outline for an internal AI policy, ready to go the moment the day-one 
 Three facts make this policy sharper here than at a typical SaaS company:
 
 1. **The data is not ordinary.** A meaningful slice of company data is export-controlled (EAR/ITAR) or CUI-adjacent. Staff pasting the wrong content into the wrong model is a potential export violation, which is a different league from a confidentiality slip.
-2. **The customers will ask.** Mattermost sells AI to defense and regulated buyers and publishes AI risk guidance for customers' security leaders. "How do you govern AI internally?" arrives through the questionnaire queue this role owns. The answer needs to exist and be true.
+2. **The customers will ask.** Mattermost sells AI to defense and regulated buyers and publishes AI risk guidance for customers' security leaders. "How do you govern AI internally?" arrives through the questionnaire queue this role owns, and the answer needs to exist and hold up when checked.
 3. **The company already solved the hard part, in the product.** The Agents V2 approval model (published June 2026) established the tiers: tools that must `ask` a human per call, tools that auto-run privately but need approval in shared spaces, tools safe to `auto_run_everywhere`, plus a separate decision about whether output enters shared context, and automation that fails closed when no human is in the loop. That is an AI governance policy written by their own engineers. The internal policy's job is to extend those settled principles from product to workplace.
 
 ## The outline
@@ -26,7 +26,7 @@ Three facts make this policy sharper here than at a typical SaaS company:
 
 **4. Evidence and records (the GRC-specific hard line).** AI never authors evidence. Evidence is computed from systems of record. AI-drafted narratives are labeled as drafts until a human approves them into record. (This is the same rule my [engine](../context/engine-bridge.md) enforces mechanically; the policy states it, and the tooling makes it hard to violate.)
 
-**5. Tooling inventory and approval.** The list of approved AI tools and models, each with its data-class ceiling, plus the intake path for adding one. Shadow-AI discovery treated like shadow-IT discovery: findable, correctable, no ambushes.
+**5. Tooling inventory and approval.** The list of approved AI tools and models, each with its data-class ceiling, plus the intake path for adding one. Shadow-AI discovery gets treated the way mature programs treat shadow IT: something to find and correct through a known process, never an ambush.
 
 **6. Vendor and model-provider risk.** AI vendors enter the same TPRM process as any vendor, with the additional questions: training-data usage, retention, tenancy, and the export-control posture of where inference runs.
 

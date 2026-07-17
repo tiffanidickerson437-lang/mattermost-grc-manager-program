@@ -17,7 +17,7 @@ A September start puts the CMMC Reform Task Force report (~11 September) inside 
 
 ## Workstream B: Inventory what exists (weeks 1 to 3)
 
-Read everything before changing anything.
+The discipline for this phase is reading everything before changing anything.
 
 | Inventory | What I am establishing |
 |---|---|
@@ -44,7 +44,7 @@ This memo is the first artifact the leadership team sees from the new GRC functi
 
 ## Workstream D: Visible early fixes (weeks 2 to 4)
 
-Small, fast, high-signal. Each one routed through its owner, never pushed unilaterally.
+These are chosen to be small, fast, and high-signal, and each one gets routed through its content owner rather than pushed unilaterally.
 
 | Fix | What it looks like |
 |---|---|

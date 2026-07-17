@@ -21,11 +21,11 @@ A compliance program that lives in git and proves itself in CI: a 45-control lib
 ## What gets adapted for Mattermost, specifically
 
 1. **Drata as an evidence gateway, not a rip-out.** The engine's gateway pattern (read from the system of record, validate against schema, record) points at Drata exactly the way it points at any other source. The architecture decision about Drata's long-term role belongs to the company, and the [60-day memo](../30-60-90/days-31-60.md) prices the options honestly.
-2. **A vulnerability-response control family, sourced from them.** Mattermost's published Product Vulnerability Process is the strongest public GRC artifact they have. The engine gains a control family built from it (intake, scoring, remediation SLAs, backporting, advisory publication, post-incident review), with evidence expectations attached. Their process, promoted into the control library it deserves.
+2. **A vulnerability-response control family, sourced from them.** Mattermost's published Product Vulnerability Process is the strongest public GRC artifact they have, and it deserves a formal place in the control library. The engine gains a control family built from it (intake, scoring, remediation SLAs, backporting, advisory publication, post-incident review), with evidence expectations attached, so the next audit inherits what product security already does well.
 3. **Drift response as a Playbook run.** The engine opens GitHub issues on drift. At Mattermost, drift can open a Playbook run in Mattermost itself, which is both operationally better there and the kind of dogfooding the company values.
 4. **The HITL vocabulary swap.** The engine's human-gate tiers translate directly into the approval language their Agents V2 model shipped: read-only checks can run automatically, anything that asserts compliance status waits for a person, and formal attestations are always and only human. Their engineers already settled this argument in the product; the compliance program gets to inherit the win.
 5. **800-171 Rev 2 as the rendered profile of record** for the CMMC work, per the [runbook](../runbooks/cmmc-l2-self-assessment.md), with the SPRS score derived from control state rather than from a spreadsheet nobody can reproduce.
 
-## The one-line version
+## The short version
 
-The engine proves the method in public; this repo is the method aimed at one company's actual calendar, obligations, and tooling. Day one is configuration, not construction.
+The engine proves the method in public, and this repo aims that method at one company's actual calendar, obligations, and tooling. That is what makes a fast start realistic: most of what day one needs has already been built and tested, and the remaining work is pointing it at Mattermost's systems.

@@ -19,10 +19,10 @@ What their public GitHub org tells a GRC operator. Surveyed via the GitHub API o
 
 The product side runs like a serious engineering organization: dozens of CI workflows on the monorepo, disclosure policy in the repo, monthly releases, an ESR discipline, public security advisories with patches. The governance side publishes as code (handbook in git, docs in git, markdown everywhere, an `llms.txt` machine index) but does not yet enforce as code: the merge gates, ownership rules, and automated checks that protect the product do not yet protect the governance content, and the policies themselves live in Drata rather than in the git surface.
 
-That is not a criticism; it is the job. The plumbing for policy-as-code is already there and already culturally normal at this company. The work is extending the enforcement patterns the product side proved onto the governance surface, and deciding deliberately what stays in Drata versus what renders from source. Which is, almost word for word, what the posting asks for.
+Rather than a criticism, that gap is a fairly precise description of the job. The plumbing for policy-as-code is already there and already culturally normal at this company, so the work is extending the enforcement patterns the product side proved onto the governance surface, and deciding deliberately what stays in Drata versus what renders from source. The posting asks for almost exactly this, nearly word for word.
 
 ## Useful cultural signals
 
 - Their engineering blog demonstrates LLM evaluation work in their own toolchain (extending `go test` for LLM evaluation). The engineering organization is already fluent in the AI-quality conversation the GRC function will need to have.
 - Everything public is PR-driven, including the handbook, and outside contributors are normal. A GRC function that ships findings as pull requests with sources will read as native rather than foreign.
-- Their own product vocabulary (Playbooks for process, Agents approval tiers for automation trust) gives the GRC program ready-made, internally legitimate names for its operating patterns. Speaking it beats importing consultant vocabulary.
+- Their own product vocabulary (Playbooks for process, Agents approval tiers for automation trust) gives the GRC program ready-made, internally legitimate names for its operating patterns, which will land far better than importing consultant vocabulary from outside.

@@ -18,13 +18,13 @@ Catalog every place a compliance claim lives:
 
 ## Pass 2: Semantic consistency (the high-value pass)
 
-Not "are the links live" but "is each answer true and consistent with its neighbors." Three checks per item:
+This pass goes beyond checking that links resolve and asks whether each answer is true and consistent with its neighbors. Three checks per item:
 
 1. **Internal consistency.** Does the answer contradict another answer or a published control? Long runs of identical short answers deserve the closest read; that is where copy-paste defects survive, precisely because nobody reads them closely. At least one probable defect of this class was visible from outside before day one; verifying and correcting it is an early win with a story attached.
 2. **Vocabulary currency.** FedRAMP renamed its designations on 4 May 2026 (Certification, Classes A through D). Claims using retired vocabulary get corrected, and the correction note explains the rename since most readers will not know it happened.
 3. **Precision on inherited status.** Where federal claims rest on a partner's certification or a platform's authorization, the wording must carry the distinction accurately. Carefully-worded true claims exist on some pages already; the pass makes that precision uniform everywhere, including in what the field says live.
 
-Every finding routes to its content owner with the correction drafted and the source cited. Nothing changes unilaterally; everything changes with receipts.
+Every finding routes to its content owner with the correction drafted and the source cited, so nothing changes unilaterally and every change arrives with receipts.
 
 ## Pass 3: Wire answers to evidence
 
@@ -36,10 +36,10 @@ The end-state for the answer bank: each answer carries a pointer to the control 
 
 ## Pass 4: Gates and cadence
 
-- Review gate on the answer bank and trust center: no customer-facing compliance content changes without a second reviewer. Lightweight, but absolute.
+- Review gate on the answer bank and trust center: no customer-facing compliance content changes without a second reviewer. The gate stays lightweight so it never becomes a bottleneck, and it applies without exception.
 - Refresh cadence per artifact (bridge letters, pentest summaries, certificates) with calendar owners.
 - Turnaround metric live: arrival to response, reported monthly, so metric 4 has a number.
 
 ## Done looks like
 
-A customer asks a hard question; the answer comes back fast, matches every public page they might check it against, and can be backed with an artifact if the deal team needs it. Repeatably, and regardless of who is answering.
+A customer asks a hard question, and the answer comes back fast, matches every public page they might check it against, and can be backed with an artifact if the deal team needs it. It works that way every time, no matter who happens to be answering.

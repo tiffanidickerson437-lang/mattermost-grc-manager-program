@@ -5,7 +5,7 @@ The procedure behind metric 3. One control family, end to end, in 30 days, produ
 ## Design principles
 
 1. **Read from systems of record; write around nothing.** Drata remains the system of record for policies and its existing tests. The pilot adds computed evidence where humans currently collect by hand, and feeds status back where the team already looks.
-2. **Evidence is computed or it is not evidence.** Every artifact the pilot produces comes from an API call or query against the source system, is validated against a schema, and carries its collection timestamp and source. Nothing hand-assembled, nothing AI-authored; drafts and narratives are a different lane.
+2. **Evidence only counts when it is computed.** Every artifact the pilot produces comes from an API call or query against the source system, is validated against a schema, and carries its collection timestamp and source. Nothing is hand-assembled and nothing is AI-authored, since drafts and narratives live in a different lane entirely.
 3. **Drift is a ticket the day it happens.** The pilot's monitor runs on a schedule; a failed check opens a tracked item with the failing evidence attached. The open ticket is itself the due-diligence record.
 4. **Success is counted in retired manual work.** The pilot ends with a number: these N evidence items, previously collected by hand each cycle, now compute on schedule.
 
@@ -31,4 +31,4 @@ One page: controls covered, evidence items automated (the before/after count), d
 
 - Not a Drata replacement, and not a shadow GRC system. The architecture question is decided in the [60-day memo](../30-60-90/days-31-60.md) with its owner in the room, on the pilot's real data.
 - Not an AI project. The pipeline is deterministic. AI enters only where it belongs: drafting the remediation narrative on a drift ticket for a human to review, never producing the evidence.
-- Not a big-bang. One family proven beats five families sketched.
+- Not a big-bang. One control family proven end to end teaches more and earns more trust than five families sketched in parallel.

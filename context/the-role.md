@@ -33,4 +33,4 @@ Success metrics, verbatim and in their order, in the [plan overview](../30-60-90
 
 ## The timing fact that shapes everything
 
-Success metric 1 (CMMC Level 2 gap assessment in 90 days) was published on 2 July. The CMMC Phase II suspension landed 13 July. The metric is not wrong, and the work is still the right work, but its destination changed after it was written. Walking in with that understood, and with a plan that forks cleanly on the September Task Force report, is the difference between executing a stale instruction and owning the program.
+Success metric 1 (CMMC Level 2 gap assessment in 90 days) was published on 2 July. The CMMC Phase II suspension landed 13 July. The metric still describes the right work, but its destination changed after it was written. Walking in with that already understood, carrying a plan that forks cleanly on the September Task Force report, means starting the role by owning the program instead of executing an instruction the world has moved past.

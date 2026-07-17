@@ -33,4 +33,4 @@ From the suspension's Task Force mandate, as reported by Federal News Network: r
 
 From fedramp.gov/20x, Core Principles, Automatic Validation: "Continuous evidence of what is happening is stronger than a policy saying it should happen."
 
-Both federal regimes, in their own words, are moving to the operating model this role's posting asks for. Anyone arguing that continuous, automated, evidence-computed compliance is exotic is now arguing with the regulators themselves.
+Both federal regimes, in their own words, are moving to the operating model this role's posting asks for, which means the case for continuous, automated, evidence-computed compliance no longer needs to be argued from first principles. The regulators have already made it.

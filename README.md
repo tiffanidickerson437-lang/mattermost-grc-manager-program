@@ -8,7 +8,7 @@ The role's job description was published on 2 July 2026. Its first success metri
 
 In short: the ground under this job moved between the day the req was written and the day someone will start it. A generic onboarding plan would execute the old world. This repo holds a plan built for the world as it actually is, with explicit decision points for the ways it may move again.
 
-The method behind the plan is my compliance engine, [`compliance-program`](https://github.com/tiffanidickerson437-lang/compliance-program): controls defined once as code, evidence computed from systems of record, AI drafting under human approval, CI proving all of it. This repo is the Mattermost-specific application of that method. The engine holds the how; this repo holds the what, when, and why for this company.
+The method behind the plan is my compliance engine, [`compliance-program`](https://github.com/tiffanidickerson437-lang/compliance-program): controls defined once as code, evidence computed from systems of record, AI drafting under human approval, CI proving all of it. This repo applies that method to Mattermost specifically, with the company's actual calendar, obligations, and tooling filled in.
 
 ## How to read this repo
 
