@@ -1,0 +1,139 @@
+metadata:
+  generated_by: tools/scaffold.py
+  source_crosswalk: 02-controls/framework-crosswalk.yaml
+  note: Per-framework OSCAL profile selection. Each framework view is a profile resolution
+    over the one control library, not a copy.
+frameworks:
+- slug: soc2
+  name: SOC 2 (TSC 2017)
+  profile: profiles/soc2.profile.oscal.json
+  controls:
+  - AAT-01
+  - PRI-03.13
+  - IAC-17
+  - CHG-02
+  - MON-01
+  - TPM-01
+  - IRO-01
+  - CRY-01
+  - VPM-01
+  - DCH-01
+  - SAT-02
+  - GOV-01
+  - GOV-02
+  - GOV-03
+  - GOV-04
+  - RSK-01
+  - RSK-02
+  - AST-01
+  - AST-02
+  - AST-03
+  - IAM-01
+  - IAM-03
+  - IAM-04
+  - IAM-05
+  - CHG-02-BASELINE
+  - CRY-02
+  - DCH-02
+  - PRI-01
+  - PRI-02
+  - MON-02
+  - NET-01
+  - NET-02
+  - SDLC-01
+  - SDLC-02
+  - SDLC-03
+  - VPM-02
+  - END-01
+  - END-02
+  - IRO-02
+  - BCD-01
+  - BCD-02
+  - TPM-02
+  - HRS-01
+  - PES-01
+  - AAT-02
+  note: null
+- slug: iso27001
+  name: ISO/IEC 27001:2022 (controls per ISO/IEC 27002:2022)
+  profile: profiles/iso27001.profile.oscal.json
+  controls:
+  - AAT-01
+  - IAC-17
+  - CHG-02
+  - MON-01
+  - TPM-01
+  - IRO-01
+  - CRY-01
+  - VPM-01
+  - DCH-01
+  - SAT-02
+  - GOV-01
+  - GOV-02
+  - GOV-03
+  - GOV-04
+  - RSK-01
+  - RSK-02
+  - AST-01
+  - AST-02
+  - AST-03
+  - IAM-01
+  - IAM-03
+  - IAM-04
+  - IAM-05
+  - CHG-02-BASELINE
+  - CRY-02
+  - DCH-02
+  - PRI-01
+  - MON-02
+  - NET-01
+  - NET-02
+  - SDLC-01
+  - SDLC-02
+  - SDLC-03
+  - VPM-02
+  - END-01
+  - END-02
+  - IRO-02
+  - BCD-01
+  - BCD-02
+  - TPM-02
+  - HRS-01
+  - PES-01
+  - AAT-02
+  note: null
+- slug: nist-800-53
+  name: nist-800-53
+  profile: null
+  controls: []
+  note: no owned control mapped yet; tracked as a forward target
+- slug: nist-ai-rmf
+  name: NIST AI RMF 1.0
+  profile: profiles/nist-ai-rmf.profile.oscal.json
+  controls:
+  - AAT-01
+  - TPM-01
+  - IRO-01
+  note: null
+- slug: iso42001
+  name: ISO/IEC 42001:2023
+  profile: profiles/iso42001.profile.oscal.json
+  controls:
+  - AAT-01
+  note: null
+- slug: gdpr
+  name: EU GDPR
+  profile: profiles/gdpr.profile.oscal.json
+  controls:
+  - PRI-03.13
+  - TPM-01
+  - IRO-01
+  - CRY-01
+  - DCH-01
+  - RSK-01
+  - DCH-02
+  - PRI-01
+  - PRI-02
+  - IRO-02
+  - TPM-02
+  note: null
