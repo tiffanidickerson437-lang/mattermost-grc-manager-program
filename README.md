@@ -1,19 +1,21 @@
-# Mattermost,Agentic Compliance as Code Program
+<a id="mattermostagentic-compliance-as-code-program"></a>
 
-**Describes Mattermost in one config file, renders it into a working GRC program, and ships four instruments that run against Mattermost's live public surface. One of them found a defect in the published answer bank. It runs in about a second.**
+# Mattermost: an agentic compliance-as-code program
+
+**Describes Mattermost in one config file, renders it into a working GRC program, and ships four instruments that run against Mattermost's live public surface. One of them surfaced what looks like a copy-paste defect in the published answer bank. It runs in about a second, and you can run it yourself below.**
 
 [![CMMC affirmation gate](https://github.com/tiffanidickerson437-lang/mattermost-grc-manager-program/actions/workflows/affirmation-gate.yml/badge.svg)](../../actions/workflows/affirmation-gate.yml)
 [![FedRAMP ruleset drift](https://github.com/tiffanidickerson437-lang/mattermost-grc-manager-program/actions/workflows/fedramp-rules-drift.yml/badge.svg)](../../actions/workflows/fedramp-rules-drift.yml)
 [![sources](https://img.shields.io/badge/sources-public%20only%20%C2%B7%20checked%2017%20Jul%202026-1e325c)](00-governance/)
 [![engine](https://img.shields.io/badge/engine-compliance--program-1c58d9)](https://github.com/tiffanidickerson437-lang/compliance-program)
 
-This is how I'd start the GRC Manager role, built entirely from what Mattermost already publishes. It exists so the thinking is visible up front, and so a conversation can be about the parts that can't be seen from outside.
+This is how I'd start the GRC Manager role, built entirely from what Mattermost already publishes. It exists so the thinking is visible up front, and so a conversation can be about the parts that can't be seen from outside. Nothing in it is a critique. It is how I would add value, shown instead of described, and every claim below says where I read it so you can check me at the source.
 
-The program is further along than most at this stage. The certifications are held, the handbook is genuinely docs-as-code, and Mattermost's engineers have already written a human-in-the-loop AI model worth adopting rather than reinventing. Where this points at a gap, it means the next piece of work — never a knock on the work already done.
+Based on my research, the program is further along than most at this stage. The [trust center](https://trust.mattermost.com/) publishes SOC 2 Type II, SOC 3, and ISO 27001:2022 badges with the reports and certificate behind them (checked 17 July 2026), the handbook is genuinely docs-as-code, and Mattermost's engineers have already written a human-in-the-loop AI model worth adopting rather than reinventing. Where this points at a gap, it means the next piece of work, never a knock on the work already done.
 
 ### The short version, in four lines
 
-- **The published answer bank has a live defect.** It's findable from outside, and the linter that catches the whole class ships here. It runs against the live page today.
+- **Based on my research, the published answer bank appears to carry a defect.** It's findable from outside on [the live page](https://handbook.mattermost.com/operations/operations/company-policies/security-policies), and the linter that catches the whole class ships here. It runs against that page today.
 - **The first success metric was destabilized 11 days after the req posted.** The 90-day plan forks three ways and stays identical until ~day 75 whichever way September breaks.
 - **One control set already renders CMMC, SOC 2, ISO 27001, FedRAMP KSIs, and AI governance.** Adding a framework is a mapping, not a project — that's how a one-analyst function scales.
 - **Every checker here is tested by attacking it.** Gut any one of them to always-pass and its own suite turns red.
@@ -29,7 +31,7 @@ flowchart TD
   CFG --> ENG --> CTL
 
   CTL --> F1["<b>CMMC L2</b><br/>NIST 800-171<br/>SPRS-weighted"]
-  CTL --> F2["<b>SOC 2 II</b><br/>ISO 27001<br/>held today"]
+  CTL --> F2["<b>SOC 2 II</b><br/>ISO 27001<br/>on the trust center"]
   CTL --> F3["<b>FedRAMP 20x</b><br/>46 KSIs<br/>46/46, zero drift"]
   CTL --> F4["<b>AI governance</b><br/>NIST AI RMF<br/>ISO 42001"]
 
@@ -55,10 +57,9 @@ Change the config, the program re-renders. Framework choice becomes a rendering 
 
 ## Start here: the quick win
 
-Mattermost publishes its customer-questionnaire [answer bank](https://handbook.mattermost.com/operations/operations/company-policies/security-policies#common-security-related-questions-for-enterprises) publicily available — ~80 questions, clean markdown. Good material. It's also not very detailed with **96% of answers stating just "Yes."**
+Mattermost publishes its customer-questionnaire [answer bank](https://handbook.mattermost.com/operations/operations/company-policies/security-policies#common-security-related-questions-for-enterprises) in the open: about 80 questions, served as clean markdown. Good material. When I measured it on 17 July 2026, **96% of the answers were "Yes."**
 
-
-Governance question 8 asks whether internet-facing privileged accounts contain PII, SSNs, or patient health records. The published answer is **"Yes"** — a question where Yes is a disclosure, sitting in a long run of questions where Yes is the good answer. It contradicts question 9 directly beneath it, which says all PII is encrypted.
+Governance question 8 asks whether internet-facing privileged accounts contain PII, SSNs, or patient health records. The published answer is **"Yes."** That is a question where Yes reads as a disclosure, sitting in a long run of questions where Yes is the good answer, and it contradicts question 9 directly beneath it, which says all PII is encrypted. Based on my research it looks like a copy-paste error rather than a real disclosure, and the person who owns that page is the one who can say for sure.
 
 Mattermost has already diagnosed why this kind of thing survives. [*How Tool Sprawl Creates Security Vulnerabilities Through Cognitive Overload*](https://mattermost.com/blog/how-tool-sprawl-creates-security-vulnerabilities/) argues that people aren't careless — they get pushed past their cognitive limits until the brain becomes "the weakest link in the security chain." A column of eighty Yeses is that argument in miniature. No reviewer's eye survives it, the file has no CODEOWNER, and the repo has no merge gate, so nothing else catches it either. It rarely kills a deal outright — it adds friction in one security review after another, and nobody traces the slow deal back to line 87 of a markdown file.
 
@@ -81,9 +82,9 @@ It never decides. Polarity is a judgment about what a question *means*, so the r
 
 Everything here works that way: find something in the public material, build it into something that runs, let a person make the call.
 
-## The other five findings
+## The six findings
 
-Each row carries the source it came from, so every one can be checked at origin.
+Each row carries the source it came from, so every one can be checked at origin rather than taken on my word. Finding 05 is the quick win above. The full write-ups, with verbatim evidence, live in [`00-governance/`](00-governance/).
 
 | # | Finding | Primary source | Turns into |
 |---|---|---|---|
@@ -91,6 +92,7 @@ Each row carries the source it came from, so every one can be checked at origin.
 | 02 | No merge gate; security isn't in CODEOWNERS | [CODEOWNERS @ 0.2.1](https://github.com/mattermost/mattermost-handbook/blob/0.2.1/CODEOWNERS) | [CODEOWNERS + merge-gate patch](05-secure-development/codeowners-merge-gate/) |
 | 03 | No internal AI policy, while publishing AI risk guidance for other CISOs | [llms.txt](https://handbook.mattermost.com/llms.txt) · [the CISO-facing blog](https://mattermost.com/blog/sovereign-ai-risk-assessment-ciso-questions/) | [AI policy in Mattermost's own vocabulary](docs/deliverables.md#2-internal-ai-policy-written-in-their-own-vocabulary) |
 | 04 | The public docs contradict each other | [certifications page](https://docs.mattermost.com/product-overview/certifications-and-compliance.html) · [federal FAQ](https://docs.mattermost.com/product-overview/faq-federal-procurement.html) | [Public claims consistency check](07-stakeholder-management/public-claims-consistency/) |
+| 05 | The questionnaire answer bank has a defect | [live answer bank](https://handbook.mattermost.com/operations/operations/company-policies/security-policies) | The linter above, [shipped](06-evidence-and-audit/questionnaire-linter/) |
 | 06 | `llms.txt` publishes two conflicting trees | [handbook llms.txt](https://handbook.mattermost.com/llms.txt) | [Split-tree fix](05-secure-development/llms-txt-fix/) |
 
 **Four of the six share one cause: a machine-readable surface that no machine checks.** The structure is already published — that's the hard part, and it's done. Nothing runs against it yet. Good problem to inherit.
@@ -102,7 +104,7 @@ Three of these aren't mockups. The handbook is open source, so the CODEOWNERS pa
 | Published success metric | What's in here today |
 |---|---|
 | CMMC L2 gap assessment + readiness roadmap in 90 days | [110-requirement 800-171 Rev 2 workbook](frameworks/nist-800-171-rev2-workbook.md) with SPRS weights, plus a [90-day plan](30-60-90/) that branches on the September task force |
-| SOC 2 Type II + ISO 27001 cycles on time, no slippage | Both already rendered from the same 45 controls — [see them](generated/in-scope-controls.yaml) |
+| SOC 2 Type II + ISO 27001 cycles on time, no slippage | Both rendered from the same 45 controls — [see them](generated/in-scope-controls.yaml) — matching what the [trust center](https://trust.mattermost.com/) publishes today |
 | Manual evidence → automated, continuously monitored controls | The [affirmation gate](06-evidence-and-audit/affirmation-packet.md) and [FedRAMP drift check](06-evidence-and-audit/upstream-conformance-receipt.md) run weekly in CI and open an Issue when they can't come back clean |
 | Questionnaires + trust center maintained to unblock deals | [The linter](06-evidence-and-audit/questionnaire-linter/) — shipped, running against the live page |
 | GRC team grown into a scalable, program-driven function | The engine is the leverage: a company is one config file, the tools stay upstream in [`compliance-program`](https://github.com/tiffanidickerson437-lang/compliance-program) |
@@ -125,17 +127,20 @@ Where CMMC actually stands is the first thing worth settling. That's [question 1
 
 ## Where to look
 
+The numbered folders follow the [engine's](https://github.com/tiffanidickerson437-lang/compliance-program) pillar layout, so anyone who knows the engine knows this repo. Pillars 01 through 03 (risk management, controls, TPRM) are not standalone folders here because this instance renders them through [`generated/in-scope-controls.yaml`](generated/in-scope-controls.yaml); they become directories when day-one work fills them.
+
 | | |
 |---|---|
-| [`00-governance/`](00-governance/) | What's observably true, with verbatim evidence — plus the [open questions](00-governance/open-questions.md) that can't be resolved from outside |
-| [`04-ai-governance/`](04-ai-governance/) | The internal AI policy, written in Mattermost's own human-in-the-loop vocabulary |
+| [`00-governance/`](00-governance/) | The research findings with verbatim evidence, plus the [open questions](00-governance/open-questions.md) that can't be resolved from outside |
+| [`04-ai-governance/`](04-ai-governance/) | The internal AI policy draft, written in Mattermost's own human-in-the-loop vocabulary |
 | [`05-secure-development/`](05-secure-development/) | The two handbook pull requests: the CODEOWNERS + merge-gate patch and the `llms.txt` split-tree fix |
 | [`06-evidence-and-audit/`](06-evidence-and-audit/) | The instruments that run: the questionnaire linter, the CMMC affirmation gate, the FedRAMP drift check, and the self-assessment and continuous-monitoring runbooks |
 | [`07-stakeholder-management/`](07-stakeholder-management/) | The public-claims consistency check and the customer-assurance pass |
 | [`30-60-90/`](30-60-90/) | The first 90 days in three phases, mapped to the five published success metrics |
 | [`frameworks/`](frameworks/) | The rendered framework maps: the 800-171 Rev 2 workbook, the FedRAMP 20x KSI map, and the Brilliant Basics map |
-| [`generated/`](generated/) | What the engine rendered from the config: the in-scope controls and profile selection |
-| [`docs/`](docs/) | The [deliverables catalog](docs/deliverables.md), the regulatory clock, and the framework landscape |
+| [`companies/`](companies/) | The single input: Mattermost expressed as one engine config, every value traced to a public source |
+| [`generated/`](generated/) | What the engine rendered from that config: the in-scope controls and profile selection |
+| [`docs/`](docs/) | The [deliverables catalog](docs/deliverables.md), the regulatory clock, the framework landscape, and the role decode |
 
 ## Run it
 

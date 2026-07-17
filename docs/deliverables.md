@@ -1,11 +1,26 @@
 # Deliverables
 
-Things the research turned into work, rather than into observations.
+Things the research turned into work, rather than into observations. This page is the
+catalog; the artifacts themselves live in the folders it links to.
 
-Every item below starts from something Mattermost publishes. Nothing here rests on
-knowledge of their internal posture, because there isn't any — and the ones that
-would need it are listed as such rather than guessed at. Each is scored on whether
-it can be **built from public data today** or has to wait for day one.
+## In your hands today
+
+These exist now, in this repo, and you can run or read each one without waiting on me:
+
+| Deliverable | Status | Where it lives | Hold it in your hand |
+|---|---|---|---|
+| 1. Questionnaire answer-bank linter | **Shipped, runs live** | [`06-evidence-and-audit/questionnaire-linter/`](../06-evidence-and-audit/questionnaire-linter/) | `python3 06-evidence-and-audit/questionnaire-linter/lint_answers.py` |
+| 2. Internal AI policy draft | **Drafted** | [`04-ai-governance/internal-ai-policy.md`](../04-ai-governance/internal-ai-policy.md) | Read it; it is written in Mattermost's own HITL vocabulary |
+| 3. Public claims consistency check | **Built** | [`07-stakeholder-management/public-claims-consistency/`](../07-stakeholder-management/public-claims-consistency/) | A [redline](../07-stakeholder-management/public-claims-consistency/claims-redline.md) plus `python3 07-stakeholder-management/public-claims-consistency/check_claims.py` |
+| 4. CODEOWNERS + merge-gate patch | **Built, PR-ready** | [`05-secure-development/codeowners-merge-gate/`](../05-secure-development/codeowners-merge-gate/) | The [corrected file](../05-secure-development/codeowners-merge-gate/proposed-CODEOWNERS), settings, and [PR body](../05-secure-development/codeowners-merge-gate/PR-body.md) |
+| 5. `llms.txt` split-tree fix | **Built, PR-ready** | [`05-secure-development/llms-txt-fix/`](../05-secure-development/llms-txt-fix/) | The [proposed fix](../05-secure-development/llms-txt-fix/proposed-fix.md) plus `python3 05-secure-development/llms-txt-fix/validate_llms_txt.py` |
+| 6. The Drata answer | **Written** | [Below](#6-drata-as-an-evidence-gateway--the-so-what-happens-to-drata-answer) | The day-one answer to "so what happens to Drata?" |
+| 7. FedRAMP business case | Needs day-one data | [Below](#7-the-framework-selection-business-case--should-we-get-fedramp-next) | The framing and the public half of the case |
+| 8. Affirmation gate on real state | Built, needs day-one access | [`06-evidence-and-audit/`](../06-evidence-and-audit/) | `python3 06-evidence-and-audit/data/affirmation_gate.py --state 06-evidence-and-audit/data/examples/worked-example.state.yaml` |
+
+Every item starts from something Mattermost publishes. Nothing here rests on
+knowledge of their internal posture, because there isn't any, and the ones that
+would need it are listed as such rather than guessed at.
 
 The rule the whole directory follows: **gaps are the work, never the criticism.**
 Finding and closing exactly these is what the role is for. Every one of them is
@@ -174,19 +189,21 @@ marketplace. Mattermost is not.
 The strongest strategic finding in the research, and the one the role is most
 expected to spot.
 
-Mattermost is **not on the FedRAMP Marketplace** — zero records across all 670
-products. Every direct competitor holds a package ID: Slack (Class C), GovSlack
+Based on my sweep of the [live FedRAMP Marketplace feed](https://www.fedramp.gov/marketplace/products.json),
+I found no Mattermost record across all 670 products (checked 16 July 2026). In the same
+feed, every direct competitor holds a package ID: Slack (Class C), GovSlack
 (Class D), M365 GCC-High (Class D), Zoom (Class C), Atlassian Gov Cloud (Class C).
-Mattermost's only presence is a line item inside FedHIVE's Class D boundary, and the
-vendor that historically carried the listing (Contegix → Valiantys Federal) has
-dropped the association entirely.
+The only Mattermost presence I found is a line item inside FedHIVE's Class D boundary,
+and the vendor that historically carried the listing (Contegix, now Valiantys Federal)
+no longer mentions Mattermost in its own listing description.
 
-Meanwhile, a path opened this year that they are unusually well-positioned for:
+Meanwhile, a path opened this year that the public record suggests they are well
+positioned for:
 
 - **Class A** certification takes **SOC 2 Type II** as an approved external framework
 - Available via **Program Certification** — no agency sponsor required
 - Assessed via **Key Security Indicators**, not control narratives
-- Mattermost **holds SOC 2 Type II today**
+- The [trust center](https://trust.mattermost.com/) **publishes a SOC 2 Type II report today** (checked 17 July 2026)
 - The 20x submission pipeline is **open now** (FY26 Q4)
 - **Class A products on the marketplace: 0 of 670.** Nobody has done it yet
 
@@ -204,12 +221,14 @@ their pipeline, not public data. **Compliance ROI, not a vanity bar.**
 Built and running against a synthetic worked example. Needs day-one access to compute
 anything true, because control state is only knowable inside the boundary.
 
-Also unresolved from outside: **whether Mattermost holds a CMMC status at all.** No
-CMMC certification appears in the public record I can see, and the CMMC
-page they publish is product guidance for contractor customers — not a company
-certification. The recruiter says Level 2 is complete; the posting says a gap
-assessment is the first 90-day deliverable. Those describe different jobs. That's
-[question 1](../00-governance/open-questions.md).
+Also unresolved from outside: **where Mattermost stands on CMMC.** Based on my research,
+no CMMC certification appears in the public record I can reach: the [trust center](https://trust.mattermost.com/)
+lists no CMMC badge or document among its public six (checked 17 July 2026), and the
+[CMMC page](https://docs.mattermost.com/security-guide/cmmc-compliance.html) they publish
+is product guidance for contractor customers, not a company certification. I have heard
+Level 2 described as complete in one conversation, while the posting lists a gap
+assessment as the first 90-day deliverable. Those describe different jobs, and only the
+inside view resolves it. That's [question 1](../00-governance/open-questions.md).
 
 ---
 

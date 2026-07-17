@@ -65,12 +65,11 @@ control test results.
 
 ## 02 — No merge gate, and security isn't in CODEOWNERS
 
-Verified directly against the GitHub API:
+Based on my research against the public GitHub API, checked 17 July 2026:
 
 ```
 repo:                    github.com/mattermost/mattermost-handbook
 default_branch:          0.2.1            (not main)
-required_status_checks:  enforcement_level: "off"   (on a branch reporting protected: true)
 GET /actions/workflows:  total_count: 0
 .github/:                PULL_REQUEST_TEMPLATE.md only
 
@@ -81,9 +80,11 @@ CODEOWNERS — every rule in the file:
 ```
 
 **Three path rules across 281 published pages.** `/operations/security/` is not one of
-them — despite the handbook stating in prose that @dschalla *"Signs off on changes to
+them, while the handbook states in prose that @dschalla *"Signs off on changes to
 Security."* Ownership asserted in prose, not enforced by the file whose whole job is
-enforcing ownership. The handbook's own admission: a review gate *"is planned."*
+enforcing ownership. The handbook's own words: a review gate *"is planned."* Branch
+protection settings are not readable without maintainer access, so this finding rests
+on the zero-workflow count and the handbook's own admission, not on an asserted setting.
 
 So approval today is a social convention held by three people with write access.
 
@@ -106,12 +107,14 @@ site-scoped search. The only AI references are product.
 Questions CISOs Must Answer](https://mattermost.com/blog/sovereign-ai-risk-assessment-ciso-questions/)"* on the Mattermost blog — AI risk-assessment guidance for
 **other organizations'** CISOs.
 
-**Why the exposure compounds.** Internally, staff use LLMs on company data with no
-published standard, in a company where a material slice of that data is CUI-adjacent or
-export-controlled under EAR/ITAR — pasting export-controlled data into a foreign-hosted
-model is a plausible violation, and it is part of why the role requires US citizenship.
-Externally, they sell sovereign AI to defense buyers who will ask how they govern AI
-internally, and that question lands in the questionnaire queue this role owns.
+**Why the exposure compounds.** No published standard for staff LLM use is visible from
+outside, in a company where the job posting itself says a material slice of data is
+export-controlled under EAR/ITAR. Pasting export-controlled data into a foreign-hosted
+model is a plausible violation, which is why the absence of a visible standard is worth
+asking about rather than assuming either way — whether one exists internally is
+[question 6](open-questions.md). Externally, they sell sovereign AI to defense buyers who
+will ask how they govern AI internally, and that question lands in the questionnaire
+queue this role owns.
 
 Closest adjacent governance in the handbook: an Electronic Monitoring Policy and
 Confidentiality guidelines. Neither addresses AI.
@@ -147,8 +150,10 @@ Two live, public, indexed pages, reachable from the same nav:
 
 Page A says they are seeking an ATO that Page B says they hold. A federal buyer doing
 diligence can land on Page A first. The same overview page describes ISO 27001 as
-*"alignment"* while the trust center carries a real ISO 27001:2022 certificate — a
-certification they hold, described as an aspiration.
+*"alignment"* while the [trust center](https://trust.mattermost.com/) publishes an
+ISO 27001 (2022) certificate as a featured document (checked 17 July 2026) — a
+certification the trust center presents as held, described on the docs page as an
+aspiration.
 
 **The federal FAQ uses vocabulary FedRAMP retired under NTC-0004 on 25 February 2026.**
 "FedRAMP High authorized" is doubly wrong: it should be **Class D (High)**, and
