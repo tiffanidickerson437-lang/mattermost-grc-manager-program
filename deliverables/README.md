@@ -47,9 +47,16 @@ gets muted by lunchtime.
 
 ---
 
-## Buildable from public data — not yet built
+## Built from public data
+
+Three of these are not write-ups. They are real artifacts in their own folders — a
+corrected file, a runnable checker, a redline — that could be opened as pull requests
+against Mattermost's own repositories today. Two more are specified and wait only on the
+decision to build them.
 
 ### 2. Internal AI policy, written in their own vocabulary
+
+*Specified. Draft procedure in [`../runbooks/internal-ai-policy.md`](../runbooks/internal-ai-policy.md).*
 
 **The sharpest gap in the research, and the one with a ready-made answer.**
 
@@ -78,9 +85,11 @@ about whether AI should be gated is already won internally.
 
 Draft procedure: [`../runbooks/internal-ai-policy.md`](../runbooks/internal-ai-policy.md)
 
-### 3. Public claims consistency check
+### 3. Public claims consistency check → [`public-claims-consistency/`](public-claims-consistency/)
 
-Two live, public, indexed pages reachable from the same nav contradict each other:
+**Built.** A redline for every statement and a runnable checker that flags retired FedRAMP
+vocabulary and routes a human. Two live, public, indexed pages reachable from the same nav
+contradict each other:
 
 | Page | Says |
 |---|---|
@@ -91,10 +100,11 @@ A federal buyer doing diligence can land on the first one. The same overview pag
 describes ISO 27001 as *"alignment"* while the trust center carries a real
 ISO 27001:2022 certificate — describing a certification you hold as an aspiration.
 
-Both pages also use vocabulary FedRAMP retired on 4 May 2026: "FedRAMP High
-authorized" should be **Class D (High)** and **Certified**, not Authorized — and the
-FAQ answers in IL4/IL5/IL6 on the same page, which is the exact collision the rename
-existed to prevent.
+The federal FAQ also uses vocabulary FedRAMP retired under NTC-0004 on 25 February 2026:
+"FedRAMP High authorized" should be **Class D (High)** and **Certified**, not Authorized —
+and the same FAQ answers in IL4/IL5/IL6, which is the exact collision the rename existed to
+prevent. (The certifications overview uses DoD-side ATO/CON language, not FedRAMP terms, so
+the retired-vocabulary fix lands on the FAQ.)
 
 The precision worth preserving: *"authorized via partner FedHIVE"* is **carefully
 worded and correct.** Mattermost, Inc. is not a FedRAMP-certified CSP; it inherits
@@ -103,28 +113,33 @@ ballgame in a federal questionnaire, and it's what gets flattened to "we're FedR
 High" on a sales call. The deliverable protects the correct claim, not just the
 wrong ones.
 
-### 4. CODEOWNERS + merge gate patch
+### 4. CODEOWNERS + merge gate patch → [`codeowners-merge-gate/`](codeowners-merge-gate/)
 
-A pull request, not a proposal. Verified against the GitHub API:
+**Built.** A corrected CODEOWNERS file, the exact branch-protection settings, and a PR body
+written to their contributor guide. A pull request, not a proposal. Verified against the
+public GitHub API on 17 July 2026:
 
-- `mattermost-handbook` CODEOWNERS carries **3 path rules across 281 published pages**
+- `mattermost-handbook` CODEOWNERS carries **3 path rules** (the repo holds 354 Markdown
+  files; the current `0.2.1` tree publishes 281 pages)
 - `/operations/security/` is **not one of them** — despite the handbook stating in
   prose that @dschalla *"Signs off on changes to Security"*
-- `required_status_checks.enforcement_level: "off"` on a branch reporting `protected: true`
-- `GET /actions/workflows` → `total_count: 0`
-- The handbook's own admission: a review gate *"is planned"*
+- `GET /actions/workflows` → `total_count: 0` — there is no check to enforce a review
+- The handbook's own admission: a review gate *"is planned"* (branch-protection detail is
+  not readable without maintainer access, so this rests on the zero-workflow count and the
+  handbook's own words, not an asserted setting)
 
 So approval today is a social convention held by three people with write access, and
 ownership stated in prose isn't enforced by the file that enforces ownership. Deliverable
 #1 exists because of exactly this: no owner on the answer-bank file, no gate on the merge.
 
-### 5. `llms.txt` split-tree fix
+### 5. `llms.txt` split-tree fix → [`llms-txt-fix/`](llms-txt-fix/)
 
-Their `llms.txt` is real, served as `text/markdown`, with every page retrievable by
-appending `.md` — genuinely ahead of most vendors. But it publishes **two trees at
-once**: `0.2.0` (~22 entries, legacy) and `0.2.1` (~281, current), simultaneously,
-with no signal about which is live. Any agent ingesting the handbook gets two
-conflicting versions of the company.
+**Built.** A runnable validator that fails on the live file today, a saved copy of that
+file, and the concrete fix. Their `llms.txt` is real, served as `text/markdown`, with every
+page retrievable by appending `.md` — genuinely ahead of most vendors. But it publishes
+**two trees at once**: `0.2.0` (22 entries, legacy) and `0.2.1` (281 entries, current),
+simultaneously, with no signal about which is live. Any agent ingesting the handbook gets
+two conflicting versions of the company.
 
 They built the machine-readable index; nothing tells the machine which half to trust.
 For a company selling AI agents to defense buyers, the handbook their own agents would
@@ -132,7 +147,7 @@ read is ambiguous.
 
 ### 6. Drata as an evidence gateway — the "so what happens to Drata?" answer
 
-The entire content of their policies page: *"Mattermost company policies are published
+*Specified — the day-one answer, not a build.* The entire content of their policies page: *"Mattermost company policies are published
 and maintained in DRATA. Available only to internal staff members."*
 
 They are **handbook-as-code, not policy-as-code.** The plumbing is excellent — public

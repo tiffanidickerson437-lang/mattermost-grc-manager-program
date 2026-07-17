@@ -1,0 +1,20 @@
+SOURCE: https://docs.mattermost.com/product-overview/certifications-and-compliance.html
+FETCHED: 2026-07-17
+NOTE: Saved offline fixture. Public page text, trimmed to the two relevant answers.
+
+## Do you have Fed or Department of Defense (DOD) Certification?
+We are in the process of acquiring Authority to Operate (ATO) and Certificate of Networthiness (CON) certifications.
+
+## How do you ensure personal data stays within European Union?
+
+When the customer’s installation of Mattermost is self-hosted, Mattermost does not process any personal data under the jurisdiction of the data privacy laws governing within the European Union. The Mattermost support team leverages Zendesk customer service software, which hosts Mattermost information within the Unit
+
+## ISO 27001 (context)
+m and external security researchers.
+
+-
+ISO 27001 Standards which are met to achieve alignment with international security guidelines.
+
+## Contractual obligations
+
+Mattermost adheres to contractual obligations for ensuring the proper management of data through

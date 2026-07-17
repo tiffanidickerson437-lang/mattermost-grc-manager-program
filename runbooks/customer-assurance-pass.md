@@ -21,7 +21,7 @@ Catalog every place a compliance claim lives:
 This pass goes beyond checking that links resolve and asks whether each answer is true and consistent with its neighbors. Three checks per item:
 
 1. **Internal consistency.** Does the answer contradict another answer or a published control? Long runs of identical short answers deserve the closest read; that is where copy-paste defects survive, precisely because nobody reads them closely. At least one probable defect of this class was visible from outside before day one; verifying and correcting it is an early win with a story attached.
-2. **Vocabulary currency.** FedRAMP renamed its designations on 4 May 2026 (Certification, Classes A through D). Claims using retired vocabulary get corrected, and the correction note explains the rename since most readers will not know it happened.
+2. **Vocabulary currency.** FedRAMP renamed its designations on 25 February 2026 (Certification, Classes A through D). Claims using retired vocabulary get corrected, and the correction note explains the rename since most readers will not know it happened.
 3. **Precision on inherited status.** Where federal claims rest on a partner's certification or a platform's authorization, the wording must carry the distinction accurately. Carefully-worded true claims exist on some pages already; the pass makes that precision uniform everywhere, including in what the field says live.
 
 Every finding routes to its content owner with the correction drafted and the source cited, so nothing changes unilaterally and every change arrives with receipts.

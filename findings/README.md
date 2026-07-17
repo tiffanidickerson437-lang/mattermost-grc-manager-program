@@ -150,10 +150,11 @@ diligence can land on Page A first. The same overview page describes ISO 27001 a
 *"alignment"* while the trust center carries a real ISO 27001:2022 certificate — a
 certification they hold, described as an aspiration.
 
-**Both pages also use vocabulary FedRAMP retired on 4 May 2026.** "FedRAMP High
-authorized" is doubly wrong: it should be **Class D (High)**, and **Certified**, not
-Authorized. And the FAQ answers in IL4/IL5/IL6 on the same page — which is the exact
-vocabulary collision the rename existed to prevent. FedRAMP said so outright: it dropped
+**The federal FAQ uses vocabulary FedRAMP retired under NTC-0004 on 25 February 2026.**
+"FedRAMP High authorized" is doubly wrong: it should be **Class D (High)**, and
+**Certified**, not Authorized. And the same FAQ answers in IL4/IL5/IL6 — which is the exact
+vocabulary collision the rename existed to prevent. (The certifications overview uses
+DoD-side ATO/CON language, not FedRAMP terms.) FedRAMP said so outright: it dropped
 the word "levels" *"to avoid confusion with the DOD/DOW Impact Level/IL system."*
 
 **The precision that must survive the fix.** *"Authorized via partner FedHIVE"* is

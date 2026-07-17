@@ -2,13 +2,27 @@
 
 Short version: this repo is how I would begin the GRC Manager role, built from what Mattermost already publishes. I wanted to be able to showcase how I think during my interviewing process.
 
-This repo has two halves. [Findings](findings/) is what is observably true about Mattermost's compliance program from public sources. [Deliverables](deliverables/) is what those findings turn into. There are eight of them, and one already runs against your live site. The commands to run everything yourself are under Running it at the end.
+This repo has two halves. [Findings](findings/) is what is observably true about Mattermost's compliance program from public sources. [Deliverables](deliverables/) is what those findings turn into. There are eight of them: one already runs against your live site, three more are built as pull requests you could merge, and the rest are scoped. The commands to run everything yourself are under Running it at the end.
 
 Nothing here claims to know anything about Mattermost's internal security posture. Every claim traces to a public primary source I have researched and found current as of 17 July 2026, and where the public record runs out I wrote that down as an [open question](findings/open-questions.md) instead of filling it in.
 
 The program is further along than most I have seen at this stage. Which is exciting! You hold various compliance certifications today, the handbook is genuinely docs-as-code, and your own engineers have already written a human-in-the-loop AI model. I am excited to contribute to the groundwork already done by adding some of my build work into it. The role, as it was described to me, is to inherit a working GRC program and scale/maintain it rather than start one from scratch.
 
 That is the spirit of everything here. Where I point at a gap, I mean it as the next piece of work and something to hand over. I never mean it as a criticism of the work completed thus far as it is highly impressive.
+
+## Start here
+
+This repo is one instance of a public, framework-agnostic engine. The engine holds the tools; this repo is Mattermost expressed as a single config file and everything the engine renders from it.
+
+| | |
+|---|---|
+| **The engine** | [`compliance-program`](https://github.com/tiffanidickerson437-lang/compliance-program) — the public engine that generates this. Any company is a config file; any framework is a rendering. |
+| **Live engine demo** | <https://tiffanidickerson437-lang.github.io/> |
+| **The findings** | [`findings/`](findings/) — six things observably true from public sources, each with verbatim evidence and a live link you can check |
+| **The deliverables** | [`deliverables/`](deliverables/) — what the findings turn into. One shipped and running against the live site, three written as real pull requests, the rest scoped |
+| **The first 90 days** | [`generated/30-60-90/`](generated/30-60-90/) — one plan in three phases, mapped to the role's five published success metrics, built around the CMMC suspension |
+| **The federal instruments** | [`assessment/`](assessment/) — the CMMC affirmation gate, the 110-requirement 800-171 workbook, the FedRAMP KSI map, and a live drift check |
+| **The open questions** | [`findings/open-questions.md`](findings/open-questions.md) — what the public record cannot answer, kept explicit instead of guessed |
 
 ## 1 Quick Win I Surfaced From My Research
 
@@ -43,12 +57,12 @@ Each row carries the live source I read it from, so you can check every one at i
 
 | # | Finding | Primary source | Deliverable |
 |---|---|---|---|
-| 01 | Policies live in Drata, not in git | [handbook policies page](https://handbook.mattermost.com/operations/security/policies) | [Drata as a gateway, not a rip-out](deliverables/#6-drata-as-an-evidence-gateway--the-so-what-happens-to-drata-answer) |
-| 02 | No merge gate, and security is not in CODEOWNERS | [CODEOWNERS on branch 0.2.1](https://github.com/mattermost/mattermost-handbook/blob/0.2.1/CODEOWNERS) | [CODEOWNERS and merge-gate patch](deliverables/#4-codeowners--merge-gate-patch) |
-| 03 | No internal AI policy, while publishing AI risk guidance for other CISOs | [llms.txt](https://handbook.mattermost.com/llms.txt) · [your CISO-facing blog](https://mattermost.com/blog/sovereign-ai-risk-assessment-ciso-questions/) | [AI policy in your own vocabulary](deliverables/#2-internal-ai-policy-written-in-their-own-vocabulary) |
-| 04 | The public docs contradict each other | [certifications page](https://docs.mattermost.com/product-overview/certifications-and-compliance.html) · [federal FAQ](https://docs.mattermost.com/product-overview/faq-federal-procurement.html) | [Public claims consistency check](deliverables/#3-public-claims-consistency-check) |
-| 05 | The questionnaire answer bank has a defect | [live answer bank](https://handbook.mattermost.com/operations/operations/company-policies/security-policies) | Shipped: [the linter](deliverables/questionnaire-linter/) |
-| 06 | `llms.txt` publishes two conflicting trees | [handbook llms.txt](https://handbook.mattermost.com/llms.txt) | [Split-tree fix](deliverables/#5-llmstxt-split-tree-fix) |
+| 01 | Policies live in Drata, not in git | [handbook policies page](https://handbook.mattermost.com/operations/security/policies) | [Drata as a gateway, not a rip-out](deliverables/README.md#6-drata-as-an-evidence-gateway--the-so-what-happens-to-drata-answer) |
+| 02 | No merge gate, and security is not in CODEOWNERS | [CODEOWNERS on branch 0.2.1](https://github.com/mattermost/mattermost-handbook/blob/0.2.1/CODEOWNERS) | **[CODEOWNERS and merge-gate patch](deliverables/codeowners-merge-gate/)** |
+| 03 | No internal AI policy, while publishing AI risk guidance for other CISOs | [llms.txt](https://handbook.mattermost.com/llms.txt) · [your CISO-facing blog](https://mattermost.com/blog/sovereign-ai-risk-assessment-ciso-questions/) | [AI policy in your own vocabulary](deliverables/README.md#2-internal-ai-policy-written-in-their-own-vocabulary) |
+| 04 | The public docs contradict each other | [certifications page](https://docs.mattermost.com/product-overview/certifications-and-compliance.html) · [federal FAQ](https://docs.mattermost.com/product-overview/faq-federal-procurement.html) | **[Public claims consistency check](deliverables/public-claims-consistency/)** |
+| 05 | The questionnaire answer bank has a defect | [live answer bank](https://handbook.mattermost.com/operations/operations/company-policies/security-policies) | **Shipped: [the linter](deliverables/questionnaire-linter/)** |
+| 06 | `llms.txt` publishes two conflicting trees | [handbook llms.txt](https://handbook.mattermost.com/llms.txt) | **[Split-tree fix](deliverables/llms-txt-fix/)** |
 
 Four of the six findings share one cause: a machine-readable surface that no machine checks. The structure is published, and nothing runs against it yet. That is a good problem to inherit, because the hard part is already built.
 
@@ -98,7 +112,7 @@ NIST SP 800-171 Rev 2 contains no artificial-intelligence requirement. It was pu
 
 A contractor can score a perfect 110 in SPRS, sign the affirmation, and still be non-conformant with a practice the same office calls a Top 10 basic. The score is accurate, and it still cannot reflect a practice that 800-171 does not contain.
 
-The control set behind this repo can, because `AAT-01` and `AAT-02` are in scope from `ai-products: true` in the config, satisfying NIST AI RMF 1.0 and ISO/IEC 42001. That is the argument for one control set rendered into many frameworks, made by the customer's own CIO rather than by me. It also lands on [finding 03](findings/#03--no-internal-ai-policy-while-publishing-ai-risk-guidance-for-other-people), since Mattermost sells sovereign AI to the department that published the list.
+The control set behind this repo can, because `AAT-01` and `AAT-02` are in scope from `ai-products: true` in the config, satisfying NIST AI RMF 1.0 and ISO/IEC 42001. That is the argument for one control set rendered into many frameworks, made by the customer's own CIO rather than by me. It also lands on [finding 03](findings/README.md#03--no-internal-ai-policy-while-publishing-ai-risk-guidance-for-other-people), since Mattermost sells sovereign AI to the department that published the list.
 
 ### FedRAMP, as a priced option
 
@@ -106,7 +120,7 @@ FedRAMP is the framework-selection rendering: a costed "should we?" rather than 
 
 Two things are worth a conversation.
 
-First, the vocabulary changed and the public pages have not caught up. On 4 May 2026 FedRAMP renamed "Authorized" to "Certified" and replaced the old impact levels with Classes A through D, so "FedRAMP High authorized" is now retired language, and the [certifications overview](https://docs.mattermost.com/product-overview/certifications-and-compliance.html) and [federal FAQ](https://docs.mattermost.com/product-overview/faq-federal-procurement.html) still use it. Reconciling them is a claims-consistency pass, and it sits inside the fourth success metric.
+First, the vocabulary changed and the public pages have not caught up. On 25 February 2026 [FedRAMP notice NTC-0004](https://www.fedramp.gov/notices/0004/) renamed "Authorized" to "Certified" and replaced the old impact levels with Classes A through D, so "FedRAMP High authorized" is now retired language — and the [federal FAQ](https://docs.mattermost.com/product-overview/faq-federal-procurement.html) still uses it, while the [certifications overview](https://docs.mattermost.com/product-overview/certifications-and-compliance.html) answers the same federal question in DoD-side ATO/CON terms that contradict it. Reconciling them is a claims-consistency pass, and it sits inside the fourth success metric.
 
 Second, a door opened this year for a SOC 2 Type II holder. Since [NTC-0007](https://www.fedramp.gov/notices/0007/) on 3 March 2026, SOC 2 Type II is an approved entry framework to a FedRAMP Class A certification granted directly by the program office with no agency sponsor, and Mattermost [holds SOC 2 Type II today](https://trust.mattermost.com/).
 
@@ -150,9 +164,9 @@ Change the config and the program re-renders. Adding a framework is a mapping ex
 
 Your handbook and docs are open source, so three of the deliverables are not mockups. They are pull requests I could open against Mattermost's own repositories, written to your [contributor guidelines](https://github.com/mattermost/mattermost-handbook/tree/0.2.1/contributors):
 
-- The [CODEOWNERS and merge-gate patch](deliverables/#4-codeowners--merge-gate-patch), which adds `/operations/security/` to the file and turns on the review check the handbook says is planned.
-- The [`llms.txt` split-tree fix](deliverables/#5-llmstxt-split-tree-fix), which resolves the two conflicting handbook trees the index publishes at once.
-- The [public claims consistency check](deliverables/#3-public-claims-consistency-check), which reconciles the certifications overview and the federal FAQ so they stop contradicting each other.
+- The [CODEOWNERS and merge-gate patch](deliverables/codeowners-merge-gate/), which adds `/operations/security/` to the file and turns on the review check the handbook says is planned.
+- The [`llms.txt` split-tree fix](deliverables/llms-txt-fix/), which resolves the two conflicting handbook trees the index publishes at once.
+- The [public claims consistency check](deliverables/public-claims-consistency/), which reconciles the certifications overview and the federal FAQ so they stop contradicting each other.
 
 Each one branches from Mattermost's repo and follows your review process. The engine and the federal instruments stay in this separate, access-gated instance, and only the handbook fixes are meant to land upstream.
 
@@ -161,7 +175,7 @@ Each one branches from Mattermost's repo and follows your review process. The en
 | | |
 |---|---|
 | [`findings/`](findings/) | What is observably true, from public sources. Six findings, each with verbatim evidence, plus the [open questions](findings/open-questions.md) that cannot be resolved from outside |
-| [`deliverables/`](deliverables/) | What the findings turned into. Eight, scored buildable-today or needs-day-one. One shipped |
+| [`deliverables/`](deliverables/) | What the findings turned into. One shipped and running against the live site ([questionnaire linter](deliverables/questionnaire-linter/)); three built as real pull requests ([CODEOWNERS](deliverables/codeowners-merge-gate/), [llms.txt fix](deliverables/llms-txt-fix/), [claims consistency](deliverables/public-claims-consistency/)); the rest scoped and labeled |
 | [`assessment/`](assessment/) | The federal instruments: affirmation gate, 800-171 workbook, KSI map, drift check |
 | [`runbooks/`](runbooks/) | Executable procedures: the Level 2 self-assessment under the suspension, the continuous-monitoring pilot, the customer-assurance pass, the internal AI policy |
 | [`companies/`](companies/) | The single input, Mattermost expressed as one engine configuration |

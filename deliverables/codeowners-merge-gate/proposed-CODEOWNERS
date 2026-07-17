@@ -1,0 +1,26 @@
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+
+# More details are here: https://help.github.com/articles/about-codeowners/
+
+# --- Existing rules (unchanged) ---
+/operations/legal/ @it33
+/operations/finance/ @TQuock
+/operations/operations/company-processes/ @it33
+
+# --- Added ---
+
+# Security. The contributor guide already names @dschalla as the sign-off for
+# changes to Security ("8. @dschalla: Signs off on changes to Security"), but no
+# existing rule routes Security pull requests to him. The trailing slash makes
+# this recursive, so it covers operations/security and everything under it
+# (privacy/, product-security/, security-operations/).
+# Source: company/how-to-guides-for-staff/how-to-update-handbook.md
+/operations/security/ @dschalla
+
+# Optional hardening (safe to drop). Give the CODEOWNERS file itself a named
+# owner so ownership rules cannot be changed without a review from someone on the
+# documented write-access list (@jasonblais, @amyblais, @cwarnermm per the
+# contributor guide). This only takes effect if branch protection requires code
+# owner review.
+/CODEOWNERS @jasonblais @amyblais @cwarnermm
