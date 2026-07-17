@@ -69,7 +69,7 @@
   "collateral": [
     {"name": "30-60-90/", "note": "The full phase-by-phase plan behind the roadmap above, mapped to the role's five published success metrics."},
     {"name": "hiring-manager-questions.md", "note": "The questions whose answers change the plan, ranked, with what each decides."},
-    {"name": "runbooks/", "note": "Executable procedures: the L2 self-assessment under the suspension, the monitoring pilot, the customer-assurance pass, the AI policy."},
-    {"name": "context/", "note": "The req decoded, the regulatory clock, their GitHub org mapped, the full framework landscape, and the engine bridge."}
+    {"name": "runbooks (filed by pillar)", "note": "Executable procedures now live in their pillars: the L2 self-assessment and monitoring pilot in 06-evidence-and-audit/, the customer-assurance pass in 07-stakeholder-management/, the internal AI policy in 04-ai-governance/."},
+    {"name": "docs/", "note": "The req decoded, the regulatory clock, their GitHub org mapped, the full framework landscape, and the engine bridge."}
   ]
 }

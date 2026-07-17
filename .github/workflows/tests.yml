@@ -32,10 +32,10 @@ jobs:
       - name: Install dependencies
         run: pip install --disable-pip-version-check pyyaml
       - name: Affirmation gate blocks and clears correctly
-        run: python3 assessment/data/test_affirmation_gate.py
+        run: python3 06-evidence-and-audit/data/test_affirmation_gate.py
       - name: Upstream drift checker detects drift
-        run: python3 assessment/data/test_upstream_drift.py
+        run: python3 06-evidence-and-audit/data/test_upstream_drift.py
       - name: Brilliant Basics classification holds
-        run: python3 assessment/data/test_brilliant_basics.py
+        run: python3 06-evidence-and-audit/data/test_brilliant_basics.py
       - name: Questionnaire linter finds the planted defect
-        run: python3 deliverables/questionnaire-linter/test_lint_answers.py
+        run: python3 06-evidence-and-audit/questionnaire-linter/test_lint_answers.py

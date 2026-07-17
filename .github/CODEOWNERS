@@ -10,7 +10,7 @@
 
 # High-sensitivity surfaces — kept explicit even solo, so ownership is documented,
 # not left to prose.
-/assessment/                            @tiffanidickerson437-lang
+/06-evidence-and-audit/                 @tiffanidickerson437-lang
 /companies/                             @tiffanidickerson437-lang
 /.github/                               @tiffanidickerson437-lang
-/deliverables/questionnaire-linter/     @tiffanidickerson437-lang
+/frameworks/                            @tiffanidickerson437-lang

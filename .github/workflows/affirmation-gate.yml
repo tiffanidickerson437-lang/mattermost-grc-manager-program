@@ -20,14 +20,14 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "assessment/data/affirmation_gate.py"
-      - "assessment/data/test_affirmation_gate.py"
-      - "assessment/data/sprs-weights.json"
-      - "assessment/data/examples/**"
+      - "06-evidence-and-audit/data/affirmation_gate.py"
+      - "06-evidence-and-audit/data/test_affirmation_gate.py"
+      - "06-evidence-and-audit/data/sprs-weights.json"
+      - "06-evidence-and-audit/data/examples/**"
       - ".github/workflows/affirmation-gate.yml"
   pull_request:
     paths:
-      - "assessment/data/**"
+      - "06-evidence-and-audit/data/**"
 
 permissions:
   contents: read
@@ -55,15 +55,15 @@ jobs:
       # this step also proves the weights file itself. A gate that cannot block
       # must never be the reason an affirmation looks clear.
       - name: Prove the gate blocks
-        run: python3 assessment/data/test_affirmation_gate.py
+        run: python3 06-evidence-and-audit/data/test_affirmation_gate.py
 
       # Synthetic state, on purpose. No Mattermost control state exists in this
       # repo and none is claimed; state is only knowable inside the boundary.
       # On day one the --state flag points at computed evidence instead.
       - name: Compute the affirmation gate (synthetic worked example)
         run: |
-          python3 assessment/data/affirmation_gate.py \
-            --state assessment/data/examples/worked-example.state.yaml
+          python3 06-evidence-and-audit/data/affirmation_gate.py \
+            --state 06-evidence-and-audit/data/examples/worked-example.state.yaml
 
       - name: Open a blocker issue
         if: failure() && github.event_name == 'schedule'
@@ -94,5 +94,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: affirmation-packet
-          path: assessment/affirmation-packet.md
+          path: 06-evidence-and-audit/affirmation-packet.md
           if-no-files-found: error
