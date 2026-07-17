@@ -5,7 +5,7 @@ THE PROBLEM, FROM THE RESEARCH
 
 Mattermost publishes its customer-questionnaire answer bank in the open, at
 handbook.mattermost.com/operations/operations/company-policies/security-policies
-— nine sections, ~90 questions, served as clean markdown. It is genuinely good
+— nine sections, about 80 questions, served as clean markdown. It is genuinely good
 written material and it is the richest public GRC artifact they have.
 
 Nearly every answer is "Yes." And a reviewer's eye slides down a column of Yes.

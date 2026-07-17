@@ -18,7 +18,7 @@ Two rules govern this directory:
 
 | # | Finding | Evidence | Deliverable |
 |---|---|---|---|
-| 01 | Policies live in Drata, not in git | handbook | [Drata as a gateway](../deliverables/README.md#6-drata-as-an-evidence-gateway--the-so-what-happens-to-drata-answer) |
+| 01 | Policies are maintained in Drata (internal-only) | handbook | [Drata as a gateway](../deliverables/README.md#6-drata-as-an-evidence-gateway--the-so-what-happens-to-drata-answer) |
 | 02 | No merge gate; security isn't in CODEOWNERS | GitHub API | [CODEOWNERS patch](../deliverables/README.md#4-codeowners--merge-gate-patch) |
 | 03 | No internal AI policy, while publishing AI risk guidance for others | llms.txt, blog | [AI policy in their own vocabulary](../deliverables/README.md#2-internal-ai-policy-written-in-their-own-vocabulary) |
 | 04 | The public docs contradict each other | two live pages | [Claims consistency check](../deliverables/README.md#3-public-claims-consistency-check) |
@@ -27,7 +27,7 @@ Two rules govern this directory:
 
 ---
 
-## 01 — The policies are in Drata, not in git
+## 01 — Policies are maintained in Drata (internal-only)
 
 The entire content of `handbook.mattermost.com/operations/security/policies`:
 
@@ -37,15 +37,17 @@ The entire content of `handbook.mattermost.com/operations/security/policies`:
 > * Available only to internal staff members.
 > ```
 
-**Why it is the most important finding for a policy-as-code role.** They are
-*handbook-as-code, not policy-as-code.* The plumbing is genuinely excellent — public git
-repo, markdown source, a PR workflow open to outside contributors, an `llms.txt` index,
-`.md` content negotiation on every URL. Most companies do not have this. But the governed
-artifacts live behind a SaaS login, and the Drata↔handbook boundary is undocumented and
-unlinked in both directions.
+**What the public record shows.** The public handbook is docs-as-code and the plumbing is
+genuinely good — public git repo, markdown source, a PR workflow open to outside
+contributors, an `llms.txt` index, `.md` content negotiation on every URL. Most companies
+do not have this. The governed policy artifacts are maintained in Drata, a commercial GRC
+platform, and are available only to internal staff. That is a normal system-of-record
+choice. It does mean the policies themselves are not publicly inspectable the way the
+handbook is, and the Drata↔handbook boundary is undocumented and unlinked in both directions.
 
-**What it costs.** Any policy-as-code proposal has to answer *"so what happens to Drata?"*
-on day one, and most answers are a rip-out that nobody wants.
+**Why it matters for the role.** Any automation proposal has to answer *"so what happens to
+Drata?"* on day one. The right answer treats Drata as the system of record to read from, not
+something to rip out.
 
 **Corroborating signal.** The posting lists *"compliance automation tooling such as Vanta
 or Drata"* as nice-to-have. Vanta appears nowhere in the handbook. Drata is the incumbent.
@@ -54,7 +56,7 @@ or Drata"* as nice-to-have. Vanta appears nowhere in the handbook. Drata is the 
 20x**. The platform they keep their policies in took the 20x route and is on the
 marketplace. Mattermost is not.
 
-**Not found publicly, presumed in Drata:** the ISMS as a named artifact, acceptable use
+**Not found publicly (likely held in Drata or another internal system):** the ISMS as a named artifact, acceptable use
 policy, control library, control mappings, TPRM policy, vendor tiering, the security risk
 register, evidence collection procedures, audit calendar, internal audit procedures, any
 control test results.

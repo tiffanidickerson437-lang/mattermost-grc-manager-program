@@ -13,7 +13,7 @@ Do not edit by hand: the next run overwrites it.
 | **KSIs upstream** | 46 |
 | **KSIs mapped here** | 46 |
 | **Result** | 46/46 reconciled, 0 finding(s) |
-| **Checked** | 2026-07-17 14:01:52 UTC at commit `6623359` |
+| **Checked** | 2026-07-17 19:35:39 UTC at commit `a9e70c8` |
 
 Every KSI id published in the current FedRAMP ruleset is present in this repo's mapping, and this repo's mapping claims no KSI that FedRAMP does not publish. Verified in both directions, per category, at the version stamped above.
 

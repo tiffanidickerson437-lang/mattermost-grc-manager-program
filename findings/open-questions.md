@@ -4,13 +4,13 @@ Ranked by how much the answer changes the job. Each entry has the question as I 
 
 ---
 
-## 1. Where does CMMC Level 2 actually stand today?
+## 1. Where does CMMC Level 2 stand today, and is it still the target?
 
-**Ask:** "I've heard Level 2 described as complete in one conversation, and the posting lists a gap assessment and readiness roadmap as the first 90-day deliverable. Can you walk me through where it really stands: what scope, what boundary, self-assessment or assessor-based, and for which entity?"
+**Ask:** "I've heard Level 2 described as complete in one conversation, and the posting lists a gap assessment and readiness roadmap as the first 90-day deliverable. Can you walk me through where it really stands: what scope, what boundary, self-assessment or assessor-based, and for which entity? And with Phase II suspended, is CMMC still the federal target you want prioritized, or does FedRAMP move ahead of it?"
 
-**Why:** These describe two different jobs. "Maintain a completed program" and "build the assessment from scratch" need different first months. The 13 July suspension also changed what "done" means: a completed self-assessment posted to SPRS is current and valid, while a roadmap that targeted a C3PAO assessment now points at a process that cannot currently be purchased.
+**Why:** These describe two different jobs. "Maintain a completed program" and "build the assessment from scratch" need different first months. The 13 July suspension also changed what "done" means: a completed self-assessment posted to SPRS is current and valid, while a roadmap that targeted a C3PAO assessment now points at a process that cannot currently be purchased. It also reopens the CMMC-versus-FedRAMP sequencing question that question 5 below takes up in detail.
 
-**The answer decides:** whether my first 30 days are verification work (re-derive the evidence behind an existing SPRS score) or scoping work (define the boundary and start the assessment).
+**The answer decides:** whether my first 30 days are verification work (re-derive the evidence behind an existing SPRS score) or scoping work (define the boundary and start the assessment), and which federal target leads the 90-day plan.
 
 ## 2. Does federal compliance live in Mattermost Federal, Inc. or in the parent security org?
 

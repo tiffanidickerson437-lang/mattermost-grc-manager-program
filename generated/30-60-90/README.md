@@ -1,6 +1,6 @@
 # The first 90 days
 
-One plan in three phases, built against the role's five published success metrics and the regulatory calendar as it stands on 16 July 2026.
+One plan in three phases, built against the role's five published success metrics and the regulatory calendar as it stands on 16 July 2026. The engine rendered these artifacts from the 16 July 2026 research snapshot, and every public source they rest on was re-checked on 17 July 2026, the check date the rest of the repo cites.
 
 ## The five metrics, verbatim from the posting
 

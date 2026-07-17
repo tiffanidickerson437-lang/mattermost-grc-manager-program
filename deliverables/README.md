@@ -19,7 +19,7 @@ framed as something to hand over, not something to point at.
 
 **Buildable from public data.** Runs today, against their live page, in about a second.
 
-Their answer bank is public, ~90 questions across nine sections, served as clean
+Their answer bank is public, about 80 questions across nine sections, served as clean
 markdown. It is genuinely good material. It is also **96% "Yes"** — and a reviewer's
 eye slides down a column of Yes.
 

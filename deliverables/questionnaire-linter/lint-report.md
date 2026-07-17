@@ -1,7 +1,7 @@
 # Questionnaire answer-bank lint
 
 Source: [https://handbook.mattermost.com/operations/operations/company-policies/security-policies.md](https://handbook.mattermost.com/operations/operations/company-policies/security-policies.md)  
-Checked: 2026-07-17 15:04:00 UTC · 80 questions · 96% answered Yes
+Checked: 2026-07-17 19:35:39 UTC · 80 questions · 96% answered Yes
 
 ## 2 question(s) need a human
 
