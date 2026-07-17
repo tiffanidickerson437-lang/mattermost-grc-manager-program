@@ -1,4 +1,4 @@
-# Findings
+# Research Findings
 
 What is observably true about Mattermost's compliance program, from what Mattermost
 publishes. Every item traces to a primary source checked 17 July 2026 — their handbook,
