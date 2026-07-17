@@ -1,14 +1,8 @@
-# Mattermost GRC: Day One
-
-My working repo for the GRC Manager role at Mattermost. Everything here exists so that on my first day I am executing, and before that, so I walk into every interview conversation already carrying the plan.
-
 ## Why this repo exists
 
-The role's job description was published on 2 July 2026. Its first success metric reads, verbatim: *"CMMC Level 2 gap assessment and readiness roadmap delivered within first 90 days."* Eleven days after it was posted, the DoW CIO suspended CMMC's third-party assessment phase. In the same ten-week window, FedRAMP renamed its entire designation scheme, shipped a consolidated machine-readable ruleset, and opened its 20x submission pipeline.
+The role's job description was published prior to the DoW CIO's suspension of CMMC's third-party assessment phase. In the same ten-week window, FedRAMP renamed its entire designation scheme, shipped a consolidated machine-readable ruleset, and opened its 20x submission pipeline.
 
-In short: the ground under this job moved between the day the req was written and the day someone will start it. A generic onboarding plan would execute the old world. This repo holds a plan built for the world as it actually is, with explicit decision points for the ways it may move again.
-
-The method behind the plan is my compliance engine, [`compliance-program`](https://github.com/tiffanidickerson437-lang/compliance-program): controls defined once as code, evidence computed from systems of record, AI drafting under human approval, CI proving all of it. This repo applies that method to Mattermost specifically, with the company's actual calendar, obligations, and tooling filled in.
+The method behind this plan is my compliance engine, [`compliance-program`](https://github.com/tiffanidickerson437-lang/compliance-program): controls defined once as code, evidence computed from systems of record, AI drafting under human approval, CI proving all of it. This repo applies that method to Mattermost specifically, with the company's actual calendar, obligations, and tooling filled in.
 
 ## How to read this repo
 
@@ -28,11 +22,3 @@ The method behind the plan is my compliance engine, [`compliance-program`](https
 2. Findings about Mattermost's current posture are framed as what they are: the work. A gap observed from outside is a first-90-days priority, and several of them are why this role exists.
 3. This is a private working repo. It is written to be shareable in a conversation, and nothing in it depends on information that is not public.
 
-## Status
-
-| Item | State |
-|---|---|
-| Recruiter screen | Cleared |
-| Hiring manager round | Scheduled (July 2026) |
-| Plan basis | Public sources as of 16 July 2026 |
-| Next revision trigger | CMMC Reform Task Force report (~11 September 2026) or new Mattermost disclosure |
