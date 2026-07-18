@@ -232,18 +232,12 @@ inside view resolves it. That's [question 1](../00-governance/open-questions.md)
 
 ---
 
-## Deliberately not deliverables
+## Deliberately not a deliverable
 
 - **The CVE stream.** Recurring path-traversal and SSO/OIDC findings, patches shipped
-  each time, responsible disclosure program running. Worth noticing: they consistently
-  **self-score above NVD** (9.9 vendor vs 7.5 NVD on CVE-2025-25279). A vendor scoring
-  itself harder than the national database is not downplaying anything — that's a
-  favorable read, and the opposite of what "heavy CVE stream" suggests at a glance.
-- **The Series B tension.** Seven years post-round, no new raise, aggressive 2026
-  C-suite buildout with a finance bench citing "investor due diligence readiness."
-  Reads like a company preparing to raise or exit — which would make compliance
-  posture diligence material. Worth understanding, not worth raising.
-- **The req's disappearance from the public job board.** The Greenhouse link resolves
-  and renders "New"; the board index doesn't list it. Innocuous readings exist
-  (unlisted during late-stage interviews, index lag). A neutral question for the
-  recruiter, never an assumption.
+  each time, responsible disclosure program running. Worth noticing: the vendor
+  consistently **self-scores above NVD** (9.9 vendor vs 7.5 NVD on CVE-2025-25279).
+  A vendor scoring itself harder than the national database is not downplaying
+  anything — that's a favorable read, and the opposite of what "heavy CVE stream"
+  suggests at a glance. Nothing to fix here; it's evidence the disclosure program
+  works as published.

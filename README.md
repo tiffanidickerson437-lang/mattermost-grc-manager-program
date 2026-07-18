@@ -6,6 +6,7 @@
 
 [![CMMC affirmation gate](https://github.com/tiffanidickerson437-lang/mattermost-grc-manager-program/actions/workflows/affirmation-gate.yml/badge.svg)](../../actions/workflows/affirmation-gate.yml)
 [![FedRAMP ruleset drift](https://github.com/tiffanidickerson437-lang/mattermost-grc-manager-program/actions/workflows/fedramp-rules-drift.yml/badge.svg)](../../actions/workflows/fedramp-rules-drift.yml)
+[![tests](https://github.com/tiffanidickerson437-lang/mattermost-grc-manager-program/actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
 [![sources](https://img.shields.io/badge/sources-public%20only%20%C2%B7%20checked%2017%20Jul%202026-1e325c)](00-governance/)
 [![engine](https://img.shields.io/badge/engine-compliance--program-1c58d9)](https://github.com/tiffanidickerson437-lang/compliance-program)
 
@@ -129,14 +130,15 @@ Where CMMC actually stands is the first thing worth settling. That's [question 1
 
 | | |
 |---|---|
-| [`00-governance/`](00-governance/) | What's observably true, with verbatim evidence — plus the [open questions](00-governance/open-questions.md) that can't be resolved from outside, the role decode, and the regulatory clock |
-| [`01-tprm/`](01-tprm/) | The third-party picture as the public record shows it: the inherited FedRAMP boundary and the vendors the compliance program runs on |
+| [`00-governance/`](00-governance/) | What's observably true, with verbatim evidence — plus the [open questions](00-governance/open-questions.md) that can't be resolved from outside |
+| [`01-tprm/`](01-tprm/) | The third-party picture from the public record: the inherited FedRAMP boundary and the vendors the compliance program runs on |
 | [`02-ai-governance/`](02-ai-governance/) | The internal AI policy, written in Mattermost's own human-in-the-loop vocabulary |
 | [`03-secure-development/`](03-secure-development/) | The two handbook pull requests: the CODEOWNERS + merge-gate patch and the `llms.txt` split-tree fix |
-| [`04-evidence-and-audit/`](04-evidence-and-audit/) | The instruments that run: the questionnaire linter, the CMMC affirmation gate, the FedRAMP drift check, the framework maps, and the self-assessment and continuous-monitoring runbooks |
+| [`04-evidence-and-audit/`](04-evidence-and-audit/) | The instruments that run: the questionnaire linter, the CMMC affirmation gate, the FedRAMP drift check, and the self-assessment and continuous-monitoring runbooks |
+| [`04-evidence-and-audit/frameworks/`](04-evidence-and-audit/frameworks/) | The rendered framework maps: the 800-171 Rev 2 workbook, the FedRAMP 20x KSI map, and the Brilliant Basics map |
 | [`05-stakeholder-management/`](05-stakeholder-management/) | The public-claims consistency check and the customer-assurance pass |
-| [`30-60-90/`](30-60-90/) | The 30/60/90 plans: the first 90 days in three phases, mapped to the five published success metrics |
-| [`generated/`](generated/) | The config that describes Mattermost and what the engine rendered from it |
+| [`30/60/90 plans`](30-60-90/) | The first 90 days in three phases, mapped to the five published success metrics |
+| [`generated/`](generated/) | What the engine rendered from the config: the in-scope controls and profile selection |
 | [`docs/`](docs/) | The [deliverables catalog](docs/deliverables.md) |
 
 ## Run it
@@ -158,5 +160,3 @@ python3 04-evidence-and-audit/data/test_brilliant_basics.py                 # 15
 ```
 
 Same config, same library, same output every run.
-
-— Tiffani Dickerson · [compliance-program engine](https://github.com/tiffanidickerson437-lang/compliance-program)
