@@ -1,6 +1,6 @@
 <a id="mattermostagentic-compliance-as-code-program"></a>
 
-# Mattermost
+# Mattermost's Agentic Compliance as Code Program Proposal
 
 **Describes Mattermost in one config file, renders it into a working GRC program, and ships four instruments that run against Mattermost's live public surface. One of them found a defect in the published answer bank. It runs in about a second.**
 
