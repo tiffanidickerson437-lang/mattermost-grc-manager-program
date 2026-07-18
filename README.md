@@ -1,6 +1,6 @@
 <a id="mattermostagentic-compliance-as-code-program"></a>
 
-# Mattermost, onboarded
+# Mattermost
 
 **Describes Mattermost in one config file, renders it into a working GRC program, and ships four instruments that run against Mattermost's live public surface. One of them found a defect in the published answer bank. It runs in about a second.**
 
@@ -10,9 +10,9 @@
 [![sources](https://img.shields.io/badge/sources-public%20only%20%C2%B7%20checked%2017%20Jul%202026-1e325c)](00-governance/)
 [![engine](https://img.shields.io/badge/engine-compliance--program-1c58d9)](https://github.com/tiffanidickerson437-lang/compliance-program)
 
-This is how I'd start the GRC Manager role, built entirely from what Mattermost already publishes. It exists so the thinking is visible up front, and so a conversation can be about the parts that can't be seen from outside.
+This is how I'd start the GRC Manager role, built entirely from what Mattermost already publishes. It exists to communicate a visual on my thinking in terms of leveraging human in the loop agentic forward compliance.
 
-The program is further along than most at this stage. The certifications are held, the handbook is genuinely docs-as-code, and Mattermost's engineers have already written a human-in-the-loop AI model which is extremely exciting! Where this repo points to a gap is meant to be a springboard for the next piece of work — never a knock on the work already done.
+Mattermost is further along in terms of its maturity across cybersecurity than most at this stage. Multiple compliance certifications are held, the handbook is genuinely docs-as-code, and Mattermost's engineers have already written a human-in-the-loop AI model which is extremely impressive and exciting! Where this repo points to a gap is meant to be a springboard for the next piece of work — never a knock on the work already done.
 
 ### The short version, in four lines
 
